@@ -1,0 +1,140 @@
+# Seosong–Epurun Medication-Demand Forecasting Study
+
+This repository is the self-contained research package for a paper on 14-day medication-demand forecasting at Seosong and Epurun hospitals. It contains the exact hospital inputs used by the study, processed model matrices, the LAVAR implementation, rolling checkpoints, seed-level predictions, evaluation tables, figures, and working manuscripts.
+
+Only Seosong and Epurun are in scope. Results or claims about other hospitals do not belong in this repository.
+
+## Main result
+
+The evaluated forecast is a fixed ensemble of two LAVAR configurations across five random seeds:
+
+```text
+prediction = 0.55 × S11_LATENT16 + 0.45 × S04_GRU_H32_L1
+seeds      = 42, 123, 456, 789, 1024
+horizon    = 14 days
+```
+
+| Hospital | Days | Targets | Rolling folds per seed | Ensemble mean MSE | Change vs S11 | Mean skill vs last-value naive |
+|---|---:|---:|---:|---:|---:|---:|
+| Epurun | 1,461 | 248 | 52 | 0.9195 | −4.38% | −0.1092 |
+| Seosong | 1,844 | 3,126 | 79 | 1.8214 | −3.17% | −0.1340 |
+
+The ensemble lowers mean MSE relative to S11 at both hospitals, but the operational interpretation differs. Epurun satisfies the stored promotion rule at weights 0.50 and 0.55. Seosong does not: its average p95 fold MSE is slightly worse than S11, and its preferred weight varies substantially by seed. Both hospitals have negative mean skill against a last-value naive forecast, so these results support a comparison among the evaluated learned models—not a claim that LAVAR universally beats persistence.
+
+## Study design
+
+- Inputs are aligned daily patient/covariate features (`X`) and medication-demand targets (`y`).
+- Stage 1 learns an autoencoded latent state and latent dynamics.
+- Stage 2 freezes Stage 1 and trains density-specific medication-demand heads.
+- `S04_GRU_H32_L1` uses the base latent capacity and a one-layer GRU supply head with hidden width 32.
+- `S11_LATENT16` increases the latent dimension to 16 and uses wider encoder/decoder layers with the same GRU head family.
+- Evaluation uses expanding-history rolling origins, a 14-day horizon, a 14-day step, a 730-day initial training requirement, and a nominal 90-day retraining cadence with the recorded quality trigger.
+- MSE, MAE, fold-tail metrics, and skill `1 − MSE_model / MSE_naive` are computed for each seed.
+- The displayed 2.5%–97.5% interval is the empirical spread across five seeded ensemble predictions. It is not a calibrated clinical prediction interval.
+
+See [the LAVAR technical guide](lavar/LAVAR_README.md) for the model contract and [the English working paper](reports/paper/PAPER_ENG.md) for the study narrative.
+
+## Repository layout
+
+```text
+.
+├── AGENTS.md                    # Repository and coding conventions
+├── README.md
+├── configs/                     # Selected model specifications
+├── data/
+│   ├── raw/                     # Original consumed hospital/reference inputs
+│   └── processed/               # Intermediate and model-ready Parquet files
+├── lavar/                       # LAVAR model implementation
+├── models/                      # Packaged rolling Stage 1/Stage 2 checkpoints
+├── paper_code/                  # Study-specific preprocessing and evaluation code
+├── reports/
+│   ├── notebooks/              # Presentation-only result notebooks
+│   ├── paper/                  # English, Korean, and Japanese working papers
+│   └── compiled/               # Historical compiled reports; not the manuscript source
+├── results/                     # Run metadata, model-selection evidence, and final outputs
+├── scripts/                     # Command-line workflow modules
+├── pyproject.toml
+└── uv.lock
+```
+
+## Environment
+
+Python 3.12 and `uv` are required.
+
+```bash
+uv sync --frozen
+```
+
+Run workflow modules from the repository root.
+
+## Validation
+
+Validate the packaged data/checkpoint relationships and reported headline metrics:
+
+```bash
+uv run python -m scripts.verify_package
+```
+
+Run a syntax check:
+
+```bash
+uv run python -m compileall -q lavar paper_code scripts
+```
+
+Git is the versioned integrity record for this package. There is no separately maintained checksum manifest.
+
+## Reproduction workflows
+
+The following commands write artifacts. Commit or copy the existing outputs before running them if you need an exact before/after comparison.
+
+Rebuild processed data from raw inputs:
+
+```bash
+uv run python -m scripts.prepare_data --hospital all
+```
+
+Train or resume the two selected configurations:
+
+```bash
+uv run python -m scripts.train_models --hospital epurun --device cpu
+uv run python -m scripts.train_models --hospital seosong --device cpu
+```
+
+Recompute tables and figures from the packaged detailed predictions:
+
+```bash
+uv run python -m scripts.reproduce_results --hospital epurun
+uv run python -m scripts.reproduce_results --hospital seosong
+```
+
+Add `--reconstruct-predictions` to rebuild detailed predictions from rolling checkpoints. This is substantially slower and memory-intensive, especially for Seosong.
+
+## Primary result artifacts
+
+For each hospital, `results/<hospital>/final/` contains:
+
+- `ensemble_metrics_overall.csv`
+- `ensemble_metrics_by_seed.csv`
+- `ensemble_seed_predictions_per_drug.csv`
+- `ensemble_ci_per_drug.csv`
+- `ensemble_true_vs_pred_ci_per_drug.png`
+- `ensemble_summary.md`
+
+The report notebooks only read these outputs and create displays. They do not preprocess data or train models.
+
+## Paper status
+
+The Markdown manuscripts are working scientific drafts. Before journal submission, complete the author list, affiliations, target-journal formatting, literature citations, ethics/IRB wording, consent statement, funding disclosure, conflicts of interest, and the final data/code availability statement. Do not infer or fabricate those items from the repository.
+
+## Privacy and distribution
+
+Raw hospital files may contain patient-level or otherwise sensitive clinical information. Keep this repository in approved storage, restrict access, and distribute only appropriately governed, de-identified, or aggregated materials. The presence of a file in this research package is not permission to publish it.
+
+## Deliberate exclusions
+
+- Hospitals other than Seosong and Epurun
+- Non-selected model families and exploratory sweeps
+- Experimental preprocessing/training notebooks
+- Obsolete reports, caches, and operating-system metadata
+- Seosong legacy `.xls` duplicates and a format-template workbook not consumed by preprocessing
+- Redundant multi-gigabyte model-selection intermediates

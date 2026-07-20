@@ -1,0 +1,189 @@
+% Compile with: xelatex seosong_result_report.tex
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont{Apple SD Gothic Neo}
+\setmonofont{Menlo}
+\setCJKmonofont{Apple SD Gothic Neo}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+\sisetup{
+  round-mode=places,
+  round-precision=4,
+  table-number-alignment=center
+}
+
+\title{\textbf{서송병원 Forecasting Result Report}\\
+\large LAVAR Seed Stability, Blend Robustness, and Ensemble Interval Results}
+\author{LAVAR Health-Economic Forecasting Study}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report summarizes the 서송병원 forecasting results produced by the
+Seosong replication workflow. The evaluation uses daily patient features
+and prescription targets from 2020-12-14 through 2025-12-31, with 1,844
+daily observations, 38 patient-side covariates, and 3,126 prescription
+targets. Across five random seeds and 79 rolling folds per seed, the
+S11 latent-16 configuration improves average MSE over the S04 GRU
+configuration, but with materially higher seed-to-seed variance and tail
+risk. A fixed ensemble, $0.55\times$S11 $+0.45\times$S04, further reduces
+mean MSE relative to pure S11 by 0.0596, or 3.17\%, but does not satisfy
+the promotion rule because p95 fold MSE worsens relative to pure S11.
+\end{abstract}
+
+\section{Data and Evaluation Setup}
+
+The source artifacts are the Seosong report outputs from the seed
+stability, blend robustness, and ensemble workflows. The base data files are:
+\begin{itemize}
+  \item \texttt{data\_patient.parquet}: 1,844 rows by 38 columns.
+  \item \texttt{data\_prescription.parquet}: 1,844 rows by 3,126 columns.
+  \item Date range: 2020-12-14 to 2025-12-31.
+\end{itemize}
+
+Each scenario was evaluated over five seeds:
+$\{42, 123, 456, 789, 1024\}$. The rolling evaluation used a 14-day
+forecast horizon, 14-day fold step, 90-day retraining cadence, quality
+triggers enabled, and 79 folds per run.
+
+\section{Model Scenarios}
+
+The Seosong workflow compares two base scenarios and one fixed blend:
+\begin{itemize}
+  \item \textbf{S04\_GRU\_H32\_L1}: GRU temporal decoder baseline.
+  \item \textbf{S11\_LATENT16}: latent dimension 16 configuration.
+  \item \textbf{Blend w=0.55}: $0.55\times$S11 $+0.45\times$S04, clipped
+  to non-negative predictions.
+\end{itemize}
+
+The ensemble interval artifact computes empirical 95\% intervals using
+the five seeded blend predictions.
+
+\section{Seed Stability Results}
+
+Table~\ref{tab:seed-stability} reports seed-level stability summaries from
+\texttt{seed\_stability\_summary.csv}. S11 has the better mean MSE and MAE,
+but its coefficient of variation for mean MSE is roughly six times larger
+than S04's, indicating a less stable seed response.
+
+\begin{table}[H]
+\centering
+\caption{Seed stability by base scenario.}
+\label{tab:seed-stability}
+\begin{tabular}{lrrrrrr}
+\toprule
+Scenario & Seeds & Mean MSE & SD MSE & CV MSE & Mean MAE & p95 Fold MSE \\
+\midrule
+S04 GRU H32 L1 & 5 & 2.0234 & 0.0540 & 0.0267 & 0.2712 & 4.6293 \\
+S11 LATENT16 & 5 & 1.8810 & 0.2986 & 0.1587 & 0.2616 & 4.4179 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The S11 mean MSE improvement over S04 is 0.1424, equal to a 7.04\%
+reduction relative to S04. However, S11's maximum fold MSE reaches
+20.8928 in its worst seed, compared with 13.7482 for S04.
+
+\section{Blend and Ensemble Results}
+
+Table~\ref{tab:ensemble-overall} summarizes the fixed blend against pure
+S04 and pure S11 from the ensemble metrics table. The blend is the best
+option by average MSE and average maximum-fold MSE, but pure S11 remains
+best by p95 fold MSE.
+
+\begin{table}[H]
+\centering
+\caption{Overall ensemble comparison.}
+\label{tab:ensemble-overall}
+\begin{tabular}{lrrrrr}
+\toprule
+Label & Seeds & Mean MSE & SD MSE & Mean MAE & p95 Fold MSE \\
+\midrule
+Blend w=0.55 & 5 & 1.8214 & 0.1641 & 0.2615 & 4.4676 \\
+Pure S04 & 5 & 2.0210 & 0.0520 & 0.2708 & 4.6053 \\
+Pure S11 & 5 & 1.8810 & 0.2986 & 0.2616 & 4.4179 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Relative to pure S11, the fixed blend reduces mean MSE by 0.0596
+($-3.17\%$) and reduces the seed-level standard deviation of mean MSE
+from 0.2986 to 0.1641. Relative to pure S04, the blend reduces mean MSE
+by 0.1995 ($-9.87\%$). The tradeoff is tail performance: blend p95 fold
+MSE is 4.4676, which is 0.0497 higher than pure S11.
+
+\section{Robustness Decision}
+
+The fixed-weight robustness decision table reports that both $w=0.50$ and
+$w=0.55$ win on mean MSE for three of five seeds, win on p95 fold MSE for
+two of five seeds, and win both criteria for only two of five seeds.
+Accordingly, \texttt{promote\_blend\_rule=False} for both weights.
+
+\begin{table}[H]
+\centering
+\caption{Blend promotion decision.}
+\label{tab:blend-decision}
+\begin{tabular}{rrrrrr}
+\toprule
+$w$ & Seeds & Mean-MSE Wins & p95 Wins & Both Wins & Mean $\Delta$MSE \\
+\midrule
+0.50 & 5 & 3 & 2 & 2 & -0.0538 \\
+0.55 & 5 & 3 & 2 & 2 & -0.0596 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This means the blend is useful as an average-error reducer and variance
+stabilizer, but it should not replace pure S11 as the default operating
+rule if tail-fold robustness is the governing criterion.
+
+\section{Interval Output}
+
+The final ensemble workflow generates per-drug empirical 95\% intervals
+from seeded blend predictions:
+\texttt{ensemble\_ci\_per\_drug.csv}. The visualization in
+Figure~\ref{fig:true-pred-ci} plots true values, ensemble predictions,
+and the empirical interval for selected drug targets.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ensemble_true_vs_pred_ci_per_drug.png}
+\caption{Seosong ensemble true vs. predicted values with empirical 95\% intervals.}
+\label{fig:true-pred-ci}
+\end{figure}
+
+\section{Conclusion}
+
+For 서송병원, S11 LATENT16 is the stronger single model by average error,
+while S04 is more seed-stable. The $w=0.55$ blend gives the best average
+MSE and substantially reduces S11 seed variance, but it worsens p95 fold
+MSE against pure S11 and therefore fails the current promotion rule. The
+recommended reporting stance is:
+\begin{itemize}
+  \item use S11 as the primary single-model benchmark;
+  \item retain the $w=0.55$ blend as a variance-stabilized sensitivity
+  analysis and interval-production model;
+  \item avoid promoting the blend as the default model until tail-fold
+  robustness improves.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,42 @@
+[project]
+name = "lavar"
+version = "0.1.0"
+description = "LAVAR: Latent Autoencoder VAR for healthcare supply forecasting"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.3",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "pyarrow>=23.0.1",
+    "torch>=2.9.1",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+paper-prepare-data = "scripts.prepare_data:main"
+paper-reproduce-results = "scripts.reproduce_results:main"
+paper-train-models = "scripts.train_models:main"
+paper-verify = "scripts.verify_package:main"
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+    "pytest>=8.4.2",
+    "ruff>=0.12.12",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B006", "B008", "E", "F", "I"]
+
+[tool.setuptools.packages.find]
+include = ["lavar*", "paper_code*", "scripts*"]

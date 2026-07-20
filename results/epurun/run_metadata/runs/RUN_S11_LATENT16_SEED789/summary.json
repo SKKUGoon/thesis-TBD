@@ -1,0 +1,17 @@
+{
+  "mean_mse": 0.9647952822538522,
+  "median_mse": 0.9004896581172943,
+  "mean_mae": 0.4095400566091904,
+  "median_mae": 0.3898329436779022,
+  "mean_skill": -0.1789870266636355,
+  "median_skill": -0.03648092476282172,
+  "n_folds": 52,
+  "run_id": "RUN_S11_LATENT16_SEED789",
+  "created_at": "2026-04-02T12:14:41.904043",
+  "device": "mps",
+  "horizon": 14,
+  "fold_step": 14,
+  "lavar_retrain_cadence": 90,
+  "quality_triggers": true,
+  "seed": 789
+}

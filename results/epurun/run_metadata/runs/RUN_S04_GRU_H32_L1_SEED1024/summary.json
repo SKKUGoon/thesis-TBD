@@ -1,0 +1,17 @@
+{
+  "mean_mse": 0.966479089970772,
+  "median_mse": 0.8626152276992798,
+  "mean_mae": 0.40733560862449497,
+  "median_mae": 0.39026497304439545,
+  "mean_skill": -0.1878412021971695,
+  "median_skill": -0.031007693872502573,
+  "n_folds": 52,
+  "run_id": "RUN_S04_GRU_H32_L1_SEED1024",
+  "created_at": "2026-04-02T12:04:45.169768",
+  "device": "mps",
+  "horizon": 14,
+  "fold_step": 14,
+  "lavar_retrain_cadence": 90,
+  "quality_triggers": true,
+  "seed": 1024
+}

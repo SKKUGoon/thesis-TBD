@@ -1,0 +1,189 @@
+% Compile with: xelatex seosong_result_report_kor.tex
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Menlo}
+\setmainhangulfont{Apple SD Gothic Neo}
+\setsanshangulfont{Apple SD Gothic Neo}
+\setmonohangulfont{Apple SD Gothic Neo}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+\sisetup{
+  round-mode=places,
+  round-precision=4,
+  table-number-alignment=center
+}
+
+\title{\textbf{서송병원 예측 결과 보고서}\\
+\large LAVAR 시드 안정성, 블렌드 강건성, 앙상블 구간 결과}
+\author{LAVAR Health-Economic Forecasting Study}
+\date{2026년 6월}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+본 보고서는 Seosong 복제 워크플로에서 산출한 서송병원 예측 결과를
+요약한다. 평가는 2020-12-14부터 2025-12-31까지의 일별 환자 특성과
+처방 타깃을 사용했으며, 관측치는 1,844일, 환자 측 공변량은 38개,
+처방 타깃은 3,126개이다. 다섯 개 난수 시드와 시드별 79개 rolling
+fold 기준으로 보면, S11 latent-16 설정은 S04 GRU 설정보다 평균 MSE가
+낮았지만 시드 간 변동성과 tail risk가 더 컸다. 고정 블렌드
+$0.55\times$S11 $+0.45\times$S04는 pure S11 대비 평균 MSE를 0.0596,
+즉 3.17\% 낮췄다. 다만 p95 fold MSE가 pure S11보다 악화되어 현재
+promotion rule은 충족하지 못했다.
+\end{abstract}
+
+\section{데이터와 평가 설정}
+
+본 보고서는 Seosong seed stability, blend robustness, ensemble workflow의
+결과 산출물을 근거로 작성했다. 기본 데이터 파일은 다음과 같다.
+\begin{itemize}
+  \item \texttt{data\_patient.parquet}: 1,844행, 38열.
+  \item \texttt{data\_prescription.parquet}: 1,844행, 3,126열.
+  \item 기간: 2020-12-14부터 2025-12-31까지.
+\end{itemize}
+
+각 시나리오는 다섯 개 시드
+$\{42, 123, 456, 789, 1024\}$로 평가했다. Rolling evaluation은
+14일 forecast horizon, 14일 fold step, 90일 retraining cadence,
+quality trigger 활성화, run별 79개 fold 설정을 사용했다.
+
+\section{모델 시나리오}
+
+Seosong workflow는 두 개의 base scenario와 하나의 고정 블렌드를 비교한다.
+\begin{itemize}
+  \item \textbf{S04\_GRU\_H32\_L1}: GRU temporal decoder baseline.
+  \item \textbf{S11\_LATENT16}: latent dimension 16 설정.
+  \item \textbf{Blend w=0.55}: $0.55\times$S11 $+0.45\times$S04이며,
+  예측값은 음수가 되지 않도록 clipping했다.
+\end{itemize}
+
+앙상블 구간 산출물은 다섯 개 seeded blend prediction을 사용해 경험적
+95\% prediction interval을 계산한다.
+
+\section{시드 안정성 결과}
+
+Table~\ref{tab:seed-stability}는
+\texttt{seed\_stability\_summary.csv}의 시드 안정성 요약이다. S11은
+평균 MSE와 MAE가 더 낮지만, 평균 MSE의 coefficient of variation이
+S04보다 약 여섯 배 커서 시드 반응이 덜 안정적이다.
+
+\begin{table}[H]
+\centering
+\caption{Base scenario별 시드 안정성.}
+\label{tab:seed-stability}
+\begin{tabular}{lrrrrrr}
+\toprule
+Scenario & Seeds & Mean MSE & SD MSE & CV MSE & Mean MAE & p95 Fold MSE \\
+\midrule
+S04 GRU H32 L1 & 5 & 2.0234 & 0.0540 & 0.0267 & 0.2712 & 4.6293 \\
+S11 LATENT16 & 5 & 1.8810 & 0.2986 & 0.1587 & 0.2616 & 4.4179 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+S11의 평균 MSE는 S04보다 0.1424 낮으며, 이는 S04 대비 7.04\% 감소에
+해당한다. 그러나 S11의 최악 시드 기준 maximum fold MSE는 20.8928까지
+상승한 반면, S04의 해당 값은 13.7482였다.
+
+\section{블렌드와 앙상블 결과}
+
+Table~\ref{tab:ensemble-overall}은 고정 블렌드를 pure S04 및 pure S11과
+비교한 전체 앙상블 요약이다. 블렌드는 평균 MSE와 평균 maximum-fold MSE
+기준으로 가장 좋았지만, p95 fold MSE 기준으로는 pure S11이 가장 좋았다.
+
+\begin{table}[H]
+\centering
+\caption{전체 앙상블 비교.}
+\label{tab:ensemble-overall}
+\begin{tabular}{lrrrrr}
+\toprule
+Label & Seeds & Mean MSE & SD MSE & Mean MAE & p95 Fold MSE \\
+\midrule
+Blend w=0.55 & 5 & 1.8214 & 0.1641 & 0.2615 & 4.4676 \\
+Pure S04 & 5 & 2.0210 & 0.0520 & 0.2708 & 4.6053 \\
+Pure S11 & 5 & 1.8810 & 0.2986 & 0.2616 & 4.4179 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Pure S11과 비교하면, 고정 블렌드는 평균 MSE를 0.0596($-3.17\%$)
+낮추고 평균 MSE의 시드 간 표준편차를 0.2986에서 0.1641로 줄였다.
+Pure S04와 비교하면, 블렌드는 평균 MSE를 0.1995($-9.87\%$) 낮췄다.
+대신 tail 성능에는 tradeoff가 있다. 블렌드 p95 fold MSE는 4.4676으로,
+pure S11보다 0.0497 높다.
+
+\section{강건성 판정}
+
+Fixed-weight robustness decision table에 따르면 $w=0.50$과 $w=0.55$는
+모두 다섯 개 시드 중 세 개 시드에서 mean MSE 기준으로 승리했고,
+두 개 시드에서 p95 fold MSE 기준으로 승리했으며, 두 기준을 동시에
+만족한 시드는 두 개뿐이었다. 따라서 두 weight 모두
+\texttt{promote\_blend\_rule=False}로 판정됐다.
+
+\begin{table}[H]
+\centering
+\caption{블렌드 promotion decision.}
+\label{tab:blend-decision}
+\begin{tabular}{rrrrrr}
+\toprule
+$w$ & Seeds & Mean-MSE Wins & p95 Wins & Both Wins & Mean $\Delta$MSE \\
+\midrule
+0.50 & 5 & 3 & 2 & 2 & -0.0538 \\
+0.55 & 5 & 3 & 2 & 2 & -0.0596 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+즉, 블렌드는 평균 오차를 줄이고 variance를 안정화하는 데 유용하지만,
+tail-fold robustness를 운영 기준으로 삼는다면 pure S11을 대체하는
+기본 운영 규칙으로 승격하기에는 아직 충분하지 않다.
+
+\section{구간 예측 산출물}
+
+최종 앙상블 workflow는 seeded blend prediction에서 약품별 경험적
+95\% 구간을 생성한다. 해당 산출물은
+\texttt{ensemble\_ci\_per\_drug.csv}이다. Figure~\ref{fig:true-pred-ci}는
+선택된 약품 타깃에 대해 실제값, 앙상블 예측값, 경험적 구간을 함께
+표시한다.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ensemble_true_vs_pred_ci_per_drug.png}
+\caption{Seosong 앙상블 실제값, 예측값, 경험적 95\% 구간.}
+\label{fig:true-pred-ci}
+\end{figure}
+
+\section{결론}
+
+서송병원 결과에서 S11 LATENT16은 평균 오차 기준으로 더 강한 단일
+모델이고, S04는 시드 안정성이 더 높다. $w=0.55$ 블렌드는 가장 낮은
+평균 MSE를 보이고 S11의 시드 분산을 상당히 줄이지만, pure S11 대비
+p95 fold MSE를 악화시키므로 현재 promotion rule은 통과하지 못한다.
+권장 보고 관점은 다음과 같다.
+\begin{itemize}
+  \item S11을 primary single-model benchmark로 사용한다.
+  \item $w=0.55$ 블렌드는 variance-stabilized sensitivity analysis와
+  interval production model로 유지한다.
+  \item Tail-fold robustness가 개선되기 전까지 블렌드를 default model로
+  승격하지 않는다.
+\end{itemize}
+
+\end{document}
