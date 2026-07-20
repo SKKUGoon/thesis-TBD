@@ -206,9 +206,7 @@ The numbered comments above demonstrate the grouping and are not required in sou
 When changing substantive claims, keep these files synchronized in the same change:
 
 - `README.md`
-- `reports/paper/PAPER_ENG.md`
-- `reports/paper/PAPER_KOR.md`
-- `reports/paper/PAPER_JPN.md`
+- `MODEL_EXPLANATION.md`
 - `lavar/LAVAR_README.md`
 - `lavar/LAVAR_README_KOR.md`
 - `lavar/LAVAR_README_JPN.md`

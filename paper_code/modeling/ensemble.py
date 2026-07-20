@@ -2,13 +2,18 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
 
 from paper_code.config import BestModelSpec, load_best_model_spec
-from paper_code.evaluation.metrics import compute_seed_fold_metrics, summarize_seed_metrics
+from paper_code.evaluation.metrics import (
+    compute_seed_fold_metrics,
+    select_targets_with_highest_mean_ground_truth,
+    summarize_seed_metrics,
+)
 from paper_code.modeling.checkpoints import (
     list_stage2_checkpoints,
     pick_checkpoint_for_t_end,
@@ -179,31 +184,74 @@ def calculate_confidence_intervals(blended: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
+def add_forecast_dates_from_model_index(
+    confidence_intervals: pd.DataFrame,
+    model_date_index: pd.DatetimeIndex,
+) -> pd.DataFrame:
+    if "forecast_date" in confidence_intervals.columns:
+        raise ValueError("confidence_intervals already contains forecast_date")
+    if "abs_t" not in confidence_intervals.columns:
+        raise ValueError("confidence_intervals must contain abs_t")
+
+    forecast_positions = pd.to_numeric(confidence_intervals["abs_t"], errors="raise")
+    if not np.equal(forecast_positions, np.floor(forecast_positions)).all():
+        raise ValueError("abs_t must contain integer positions")
+    forecast_positions_array = forecast_positions.to_numpy(dtype=np.int64)
+
+    dates = pd.DatetimeIndex(model_date_index)
+    if dates.hasnans or not dates.is_unique or not dates.is_monotonic_increasing:
+        raise ValueError("model_date_index must contain unique, increasing, non-missing dates")
+    if len(forecast_positions_array):
+        minimum_position = int(forecast_positions_array.min())
+        maximum_position = int(forecast_positions_array.max())
+        if minimum_position < 0 or maximum_position >= len(dates):
+            raise ValueError(
+                "abs_t positions fall outside model_date_index: "
+                f"min={minimum_position}, max={maximum_position}, dates={len(dates)}"
+            )
+
+    dated_intervals = confidence_intervals.copy()
+    forecast_date_column = dates.take(forecast_positions_array).strftime("%Y-%m-%d")
+    forecast_date_position = dated_intervals.columns.get_loc("abs_t") + 1
+    dated_intervals.insert(forecast_date_position, "forecast_date", forecast_date_column)
+    return dated_intervals
+
+
 def plot_confidence_intervals(ci_frame: pd.DataFrame, output_path: Path, top_k: int = 12) -> None:
-    targets = (
-        ci_frame.groupby("target", as_index=False)["y_true"]
-        .mean()
-        .sort_values("y_true", ascending=False)["target"]
-        .head(top_k)
-        .tolist()
-    )
+    if "forecast_date" not in ci_frame.columns:
+        raise ValueError("ci_frame must contain forecast_date")
+    targets = select_targets_with_highest_mean_ground_truth(ci_frame, top_k)
     plot_data = ci_frame[ci_frame["target"].isin(targets)]
-    columns = 3
-    rows = int(np.ceil(len(targets) / columns))
-    figure, axes = plt.subplots(rows, columns, figsize=(18, 4 * rows), sharex=False)
+    rows = len(targets)
+    figure, axes = plt.subplots(rows, 1, figsize=(13, 3 * rows), sharex=False, squeeze=False)
     axes = np.array(axes).reshape(-1)
     for index, target in enumerate(targets):
         axis = axes[index]
         data = plot_data[plot_data["target"] == target].sort_values("abs_t")
-        x = data["abs_t"].to_numpy()
-        axis.plot(x, data["y_true"], color="#111827", linewidth=1.5, label="True")
-        axis.plot(x, data["y_pred_ens"], color="#2563eb", linewidth=1.5, label="Ensemble Pred")
+        forecast_dates = pd.to_datetime(data["forecast_date"], errors="raise")
+        axis.plot(forecast_dates, data["y_true"], color="#111827", linewidth=1.5, label="True")
+        axis.plot(
+            forecast_dates,
+            data["y_pred_ens"],
+            color="#2563eb",
+            linewidth=1.5,
+            label="Ensemble Pred",
+        )
         axis.fill_between(
-            x, data["y_pred_q025"], data["y_pred_q975"], color="#93c5fd", alpha=0.35, label="95% CI"
+            forecast_dates,
+            data["y_pred_q025"],
+            data["y_pred_q975"],
+            color="#93c5fd",
+            alpha=0.35,
+            label="95% CI",
         )
         axis.set_title(str(target))
         axis.set_ylim(bottom=0.0)
         axis.grid(alpha=0.25)
+        date_locator = mdates.AutoDateLocator(minticks=3, maxticks=7)
+        axis.xaxis.set_major_locator(date_locator)
+        axis.xaxis.set_major_formatter(mdates.ConciseDateFormatter(date_locator))
+        axis.set_xlabel("Forecast date")
     for index in range(len(targets), len(axes)):
         axes[index].axis("off")
     handles, labels = axes[0].get_legend_handles_labels()
@@ -245,6 +293,11 @@ def reproduce_ensemble_results(
     overall.to_csv(overall_path, index=False)
 
     ci = calculate_confidence_intervals(blended)
+    model_date_index = pd.read_parquet(
+        paths.processed(hospital) / "lavar_ready_y.parquet",
+        columns=[],
+    ).index
+    ci = add_forecast_dates_from_model_index(ci, model_date_index)
     ci_path = output_dir / "ensemble_ci_per_drug.csv"
     ci.to_csv(ci_path, index=False)
     figure_path = output_dir / "ensemble_true_vs_pred_ci_per_drug.png"

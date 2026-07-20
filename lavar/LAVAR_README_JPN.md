@@ -25,7 +25,7 @@ Stage 2 では Stage 1 backbone を固定する。各ターゲットは、学習
 - ultra-sparse: 非ゼロ率 `0.005` 以下
 - sparse: その中間
 
-各群に別々のヘッドを学習する。実装は deterministic delta head と低レベル NB/ZINB head をサポートする。本論文の二設定では GRU delta head を用いる。Delta 予測は直近需要を起点として積分され、非負制約、学習データに基づく guardrail、整数丸めを適用する。
+各群に別々のヘッドを学習する。比較した二設定では、dense と sparse ターゲットに deterministic GRU delta head を用い、ultra-sparse ターゲットには ZINB head を用いる。Delta 予測は直近需要を起点として積分され、非負制約、学習データに基づく guardrail、整数丸めを適用する。ZINB の点予測経路は head の `mu` 出力を用いる。
 
 ## 論文で用いた設定
 
@@ -35,7 +35,8 @@ Stage 2 では Stage 1 backbone を固定する。各ターゲットは、学習
 | Encoder 隠れ層 | 32, 16 | 64, 32 |
 | Decoder 隠れ層 | 16, 32 | 32, 64 |
 | 潜在ダイナミクス | VAR | VAR |
-| Stage 2 head | GRU | GRU |
+| Dense/sparse head | GRU | GRU |
+| Ultra-sparse head | ZINB | ZINB |
 | GRU 幅/層数 | 32 / 1 | 32 / 1 |
 | Stage 1 epoch 上限 | 200 | 200 |
 | Stage 2 epoch 上限 | 200 | 300 |

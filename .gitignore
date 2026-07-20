@@ -8,6 +8,7 @@ __pycache__/
 
 # Local tabular exports may contain sensitive or unmasked records.
 *.csv
+!/results/*/run_metadata/runs/*/fold_metrics.csv
 
 # Raw hospital records are sensitive and must remain local. Only the public
 # reference Parquet files are included for reproducibility.

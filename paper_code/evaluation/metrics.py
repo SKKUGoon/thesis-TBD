@@ -4,6 +4,29 @@ import numpy as np
 import pandas as pd
 
 
+def select_targets_with_highest_mean_ground_truth(
+    predictions: pd.DataFrame,
+    top_k: int,
+) -> list[str]:
+    required_columns = {"target", "y_true"}
+    missing_columns = sorted(required_columns - set(predictions.columns))
+    if missing_columns:
+        raise ValueError(f"Predictions are missing required columns: {missing_columns}")
+    if top_k < 1:
+        raise ValueError(f"top_k must be positive. Got {top_k}.")
+
+    target_mean_ground_truth = predictions.groupby("target", as_index=False)["y_true"].mean()
+    return (
+        target_mean_ground_truth.sort_values(
+            ["y_true", "target"],
+            ascending=[False, True],
+        )["target"]
+        .head(top_k)
+        .astype(str)
+        .tolist()
+    )
+
+
 def skill(mse: float, naive_mse: float) -> float:
     if pd.isna(naive_mse) or float(naive_mse) <= 1e-12:
         return np.nan

@@ -25,7 +25,7 @@ Stage 2 freezes the Stage 1 backbone. Medication targets are split by their nonz
 - ultra-sparse: nonzero rate at most `0.005`; and
 - sparse: values between those thresholds.
 
-Separate heads are fitted for the resulting target groups. The implementation supports deterministic delta heads and lower-level NB/ZINB heads. The two paper configurations use deterministic GRU delta heads. Delta predictions are integrated from the most recent observed demand, constrained to nonnegative values, passed through stored guardrails, and rounded to integers.
+Separate heads are fitted for the resulting target groups. In the two evaluated configurations, dense and sparse targets use deterministic GRU delta heads, while ultra-sparse targets use a ZINB head. Delta predictions are integrated from the most recent observed demand, constrained to nonnegative values, passed through stored guardrails, and rounded to integers. The ZINB point-forecast path uses the head's `mu` output.
 
 ## Paper configurations
 
@@ -35,7 +35,8 @@ Separate heads are fitted for the resulting target groups. The implementation su
 | Encoder hidden layers | 32, 16 | 64, 32 |
 | Decoder hidden layers | 16, 32 | 32, 64 |
 | Latent dynamics | VAR | VAR |
-| Stage 2 head | GRU | GRU |
+| Dense/sparse head | GRU | GRU |
+| Ultra-sparse head | ZINB | ZINB |
 | GRU hidden width/layers | 32 / 1 | 32 / 1 |
 | Stage 1 epochs cap | 200 | 200 |
 | Stage 2 epochs cap | 200 | 300 |

@@ -1,6 +1,6 @@
 # Seosong–Epurun Medication-Demand Forecasting Study
 
-This repository is the self-contained research package for a paper on 14-day medication-demand forecasting at Seosong and Epurun hospitals. It contains the exact hospital inputs used by the study, processed model matrices, the LAVAR implementation, rolling checkpoints, seed-level predictions, evaluation tables, figures, and working manuscripts.
+This repository is the self-contained research package for a paper on 14-day medication-demand forecasting at Seosong and Epurun hospitals. It contains the exact hospital inputs used by the study, processed model matrices, the LAVAR implementation, rolling checkpoints, seed-level predictions, evaluation tables, figures, and technical documentation.
 
 Only Seosong and Epurun are in scope. Results or claims about other hospitals do not belong in this repository.
 
@@ -26,13 +26,13 @@ The ensemble lowers mean MSE relative to S11 at both hospitals, but the operatio
 - Inputs are aligned daily patient/covariate features (`X`) and medication-demand targets (`y`).
 - Stage 1 learns an autoencoded latent state and latent dynamics.
 - Stage 2 freezes Stage 1 and trains density-specific medication-demand heads.
-- `S04_GRU_H32_L1` uses the base latent capacity and a one-layer GRU supply head with hidden width 32.
-- `S11_LATENT16` increases the latent dimension to 16 and uses wider encoder/decoder layers with the same GRU head family.
+- `S04_GRU_H32_L1` uses the base latent capacity and one-layer GRU dense/sparse heads with hidden width 32; its ultra-sparse head is ZINB.
+- `S11_LATENT16` increases the latent dimension to 16 and uses wider encoder/decoder layers with the same density-specific head families.
 - Evaluation uses expanding-history rolling origins, a 14-day horizon, a 14-day step, a 730-day initial training requirement, and a nominal 90-day retraining cadence with the recorded quality trigger.
 - MSE, MAE, fold-tail metrics, and skill `1 − MSE_model / MSE_naive` are computed for each seed.
 - The displayed 2.5%–97.5% interval is the empirical spread across five seeded ensemble predictions. It is not a calibrated clinical prediction interval.
 
-See [the LAVAR technical guide](lavar/LAVAR_README.md) for the model contract and [the English working paper](reports/paper/PAPER_ENG.md) for the study narrative.
+See [the LAVAR technical guide](lavar/LAVAR_README.md) for the implementation contract and [the Korean model explanation](MODEL_EXPLANATION.md) for the architecture, training process, ensemble-weight evidence, and interpretation.
 
 ## Repository layout
 
@@ -49,8 +49,8 @@ See [the LAVAR technical guide](lavar/LAVAR_README.md) for the model contract an
 ├── paper_code/                  # Study-specific preprocessing and evaluation code
 ├── reports/
 │   ├── notebooks/              # Presentation-only result notebooks
-│   ├── paper/                  # English, Korean, and Japanese working papers
-│   └── compiled/               # Historical compiled reports; not the manuscript source
+│   ├── paper/                  # Data/result descriptions and paper figures
+│   └── compiled/               # Historical compiled reports; not the documentation source
 ├── results/                     # Run metadata, model-selection evidence, and final outputs
 ├── scripts/                     # Command-line workflow modules
 ├── pyproject.toml
@@ -122,9 +122,9 @@ For each hospital, `results/<hospital>/final/` contains:
 
 The report notebooks only read these outputs and create displays. They do not preprocess data or train models.
 
-## Paper status
+## Documentation status
 
-The Markdown manuscripts are working scientific drafts. Before journal submission, complete the author list, affiliations, target-journal formatting, literature citations, ethics/IRB wording, consent statement, funding disclosure, conflicts of interest, and the final data/code availability statement. Do not infer or fabricate those items from the repository.
+`MODEL_EXPLANATION.md` is a Korean technical narrative, not a submission-ready manuscript. Before journal submission, prepare the author list, affiliations, target-journal formatting, literature citations, ethics/IRB wording, consent statement, funding disclosure, conflicts of interest, and the final data/code availability statement. Do not infer or fabricate those items from the repository.
 
 ## Privacy and distribution
 
