@@ -1,140 +1,32 @@
-# Seosong–Epurun Medication-Demand Forecasting Study
+# 천안의료원 약품·물품 수량 예측과 공급 효용성 연구
 
-This repository is the self-contained research package for a paper on 14-day medication-demand forecasting at Seosong and Epurun hospitals. It contains the exact hospital inputs used by the study, processed model matrices, the LAVAR implementation, rolling checkpoints, seed-level predictions, evaluation tables, figures, and technical documentation.
+현재 계획 범위는 과거 사용기록이 많은 약품 20개와 물품 약 10개의 별도 TimesFM 벡터 예측 및 같은 코호트의 부스팅·주문 효용성 비교입니다. 품목 선정에는 2020–2022년만 사용합니다. 2026-10-08 TimesFM의 공동/독립 예측과 주 조건 주문 정책 비교를 MPS로 완료했습니다. 새 코호트 부스팅 비교와 실제 운영 검증은 미완료입니다. 기존 뉴론텍·Forcep jar 결과는 예비 실험으로 보존합니다. 물품 목표는 기록 출고수량입니다.
 
-Only Seosong and Epurun are in scope. Results or claims about other hospitals do not belong in this repository.
+약품 정보만으로 한 그룹을 고정하고 그 소모량을 ARIMA·VAR·XGBoost·TimesFM으로 예측·비교하는 연구입니다. 소비 패턴은 그룹 구성에 사용하지 않습니다. A→B→A 사용 상품 전환은 확인되지 않은 가능성으로 고려하고 그룹 총량과 개별 상품 배분을 구분합니다.
 
-## Main result
+이번 목표는 전체 병원 물류 효율화로 가기 위한 첫 예측 연구입니다. 실제 재고·보충 정책·비용 절감 검증과 소모품 LLM 분류는 후속 범위입니다. 2026-10-07에 같은 제품의 병원 코드 두 개를 고정하여 ARIMA 탐색 실행을 완료했습니다. 무기록은 미관측으로 유지했으며, 이후 진단·입원/외래·연령 구성으로 XGBoost/Ridge 비교까지 실행했습니다. 전체 연구 비교와 실제 물류 개선 검증은 미완료입니다.
 
-The evaluated forecast is a fixed ensemble of two LAVAR configurations across five random seeds:
+- [최신 TimesFM 30품목 통합 보고서](runs/cheonan/timesfm_vector_20261008_01/report.md)
+- [기존 2품목 통합 물류 예측·주문 효율성 보고서](runs/cheonan/boosting_two_items_20261007_01/report.md)
+- [부스팅·효용성 방법론](research/methods/BOOSTING.md)
+- [최신 연구계획서 v1.14](research/RESEARCH_PROPOSAL.md)
+- [TimesFM 사용 방법·실행 기록·재현 계약](research/methods/TIMESFM_VECTOR_PLAN.md)
+- [이푸른·서송 약품 20개 TimesFM 실행 방법과 범위](research/methods/TIMESFM_EXTERNAL.md)
+- [병원 확장·동일 대상 비교군·추가 데이터 후속 계획](research/FOLLOWUP_VALIDATION_PLAN.md)
+- [실험 실행 순서](research/EXPERIMENT_EXECUTION.md)
+- [필수 달력·10세 연령·KCD·정부 대응기간 입력](research/methods/STANDARD_FEATURES.md)
+- [18개월 Expanding 시계열·월별 성능](runs/cheonan/xgboost_standard_features_20261007_01/longitudinal_report.md)
+- [수정 XGBoost·Ridge 결과](runs/cheonan/xgboost_standard_features_20261007_01/report.md)
+- [이전 XGBoost·환자 구성 방법론](research/methods/XGBOOST.md)
+- [XGBoost·Ridge 실행 결과와 공란 감사](runs/cheonan/xgboost_patient_composition_20261007_01/report.md)
+- [VARX 구조·X 검정 방법론](research/methods/VARX.md)
+- [X 후보 검정 결과](runs/cheonan/x_screening_20261007_03/report.md)
+- [ARIMA 방법론·보존 코드](research/methods/ARIMA.md)
+- [첫 ARIMA 탐색 결과](runs/cheonan/arima_native_missing_20261007_01/report.md)
+- [ATC 자료·다변량 계산 점검](research/ATC_MULTIVARIATE_ASSESSMENT.md)
+- [이전 v1.5 독립 검토](research/REVIEW_V1.5.md)
+- [이전 v1.6 재검토](research/REVIEW_V1.6.md)
+- [정리·Git 복구 기록](research/WORKSPACE_CLEANUP.md)
+- [작업 규칙](AGENTS.md)
 
-```text
-prediction = 0.55 × S11_LATENT16 + 0.45 × S04_GRU_H32_L1
-seeds      = 42, 123, 456, 789, 1024
-horizon    = 14 days
-```
-
-| Hospital | Days | Targets | Rolling folds per seed | Ensemble mean MSE | Change vs S11 | Mean skill vs last-value naive |
-|---|---:|---:|---:|---:|---:|---:|
-| Epurun | 1,461 | 248 | 52 | 0.9195 | −4.38% | −0.1092 |
-| Seosong | 1,844 | 3,126 | 79 | 1.8214 | −3.17% | −0.1340 |
-
-The ensemble lowers mean MSE relative to S11 at both hospitals, but the operational interpretation differs. Epurun satisfies the stored promotion rule at weights 0.50 and 0.55. Seosong does not: its average p95 fold MSE is slightly worse than S11, and its preferred weight varies substantially by seed. Both hospitals have negative mean skill against a last-value naive forecast, so these results support a comparison among the evaluated learned models—not a claim that LAVAR universally beats persistence.
-
-## Study design
-
-- Inputs are aligned daily patient/covariate features (`X`) and medication-demand targets (`y`).
-- Stage 1 learns an autoencoded latent state and latent dynamics.
-- Stage 2 freezes Stage 1 and trains density-specific medication-demand heads.
-- `S04_GRU_H32_L1` uses the base latent capacity and one-layer GRU dense/sparse heads with hidden width 32; its ultra-sparse head is ZINB.
-- `S11_LATENT16` increases the latent dimension to 16 and uses wider encoder/decoder layers with the same density-specific head families.
-- Evaluation uses expanding-history rolling origins, a 14-day horizon, a 14-day step, a 730-day initial training requirement, and a nominal 90-day retraining cadence with the recorded quality trigger.
-- MSE, MAE, fold-tail metrics, and skill `1 − MSE_model / MSE_naive` are computed for each seed.
-- The displayed 2.5%–97.5% interval is the empirical spread across five seeded ensemble predictions. It is not a calibrated clinical prediction interval.
-
-See [the LAVAR technical guide](lavar/LAVAR_README.md) for the implementation contract and [the Korean model explanation](MODEL_EXPLANATION.md) for the architecture, training process, ensemble-weight evidence, and interpretation.
-
-## Repository layout
-
-```text
-.
-├── AGENTS.md                    # Repository and coding conventions
-├── README.md
-├── configs/                     # Selected model specifications
-├── data/
-│   ├── raw/                     # Original consumed hospital/reference inputs
-│   └── processed/               # Intermediate and model-ready Parquet files
-├── lavar/                       # LAVAR model implementation
-├── models/                      # Packaged rolling Stage 1/Stage 2 checkpoints
-├── paper_code/                  # Study-specific preprocessing and evaluation code
-├── reports/
-│   ├── notebooks/              # Presentation-only result notebooks
-│   ├── paper/                  # Data/result descriptions and paper figures
-│   └── compiled/               # Historical compiled reports; not the documentation source
-├── results/                     # Run metadata, model-selection evidence, and final outputs
-├── scripts/                     # Command-line workflow modules
-├── pyproject.toml
-└── uv.lock
-```
-
-## Environment
-
-Python 3.12 and `uv` are required.
-
-```bash
-uv sync --frozen
-```
-
-Run workflow modules from the repository root.
-
-## Validation
-
-Validate the packaged data/checkpoint relationships and reported headline metrics:
-
-```bash
-uv run python -m scripts.verify_package
-```
-
-Run a syntax check:
-
-```bash
-uv run python -m compileall -q lavar paper_code scripts
-```
-
-Git is the versioned integrity record for this package. There is no separately maintained checksum manifest.
-
-## Reproduction workflows
-
-The following commands write artifacts. Commit or copy the existing outputs before running them if you need an exact before/after comparison.
-
-Rebuild processed data from raw inputs:
-
-```bash
-uv run python -m scripts.prepare_data --hospital all
-```
-
-Train or resume the two selected configurations:
-
-```bash
-uv run python -m scripts.train_models --hospital epurun --device cpu
-uv run python -m scripts.train_models --hospital seosong --device cpu
-```
-
-Recompute tables and figures from the packaged detailed predictions:
-
-```bash
-uv run python -m scripts.reproduce_results --hospital epurun
-uv run python -m scripts.reproduce_results --hospital seosong
-```
-
-Add `--reconstruct-predictions` to rebuild detailed predictions from rolling checkpoints. This is substantially slower and memory-intensive, especially for Seosong.
-
-## Primary result artifacts
-
-For each hospital, `results/<hospital>/final/` contains:
-
-- `ensemble_metrics_overall.csv`
-- `ensemble_metrics_by_seed.csv`
-- `ensemble_seed_predictions_per_drug.csv`
-- `ensemble_ci_per_drug.csv`
-- `ensemble_true_vs_pred_ci_per_drug.png`
-- `ensemble_summary.md`
-
-The report notebooks only read these outputs and create displays. They do not preprocess data or train models.
-
-## Documentation status
-
-`MODEL_EXPLANATION.md` is a Korean technical narrative, not a submission-ready manuscript. Before journal submission, prepare the author list, affiliations, target-journal formatting, literature citations, ethics/IRB wording, consent statement, funding disclosure, conflicts of interest, and the final data/code availability statement. Do not infer or fabricate those items from the repository.
-
-## Privacy and distribution
-
-Raw hospital files may contain patient-level or otherwise sensitive clinical information. Keep this repository in approved storage, restrict access, and distribute only appropriately governed, de-identified, or aggregated materials. The presence of a file in this research package is not permission to publish it.
-
-## Deliberate exclusions
-
-- Hospitals other than Seosong and Epurun
-- Non-selected model families and exploratory sweeps
-- Experimental preprocessing/training notebooks
-- Obsolete reports, caches, and operating-system metadata
-- Seosong legacy `.xls` duplicates and a format-template workbook not consumed by preprocessing
-- Redundant multi-gigabyte model-selection intermediates
+원자료·무손실 Parquet·기존 진단은 data/에 보존하며 이전 계획은 research/history/에 있습니다. LAVAR 코드는 로컬 Git 복구 참조에 퇴역했습니다. 실행 코드는 src/methods/<방법론>/, 방법론 설명은 research/methods/에 보존합니다. 민감한 자료·실행 산출물은 공개 Git 저장소에 추가하지 않습니다.

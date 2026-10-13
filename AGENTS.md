@@ -1,228 +1,82 @@
-# AGENTS.md
+# 천안의료원 약품 물류 연구 작업 규칙
 
-Root guide for agents working in the Seosong–Epurun paper repository.
+## 범위와 응답
 
-## Scope
+최신 기준은 research/RESEARCH_PROPOSAL.md다. 현재 계획 범위는 2020–2022년 기준 고빈도 약품 20개·물품 약 10개의 별도 TimesFM 벡터 예측 및 동일 코호트 부스팅·주문 정책 효용성 비교다. TimesFM 첫 30품목 예측·주 조건 정책 비교는 2026-10-08 MPS로 완료했고 확대 부스팅·민감도·실제 운영 검증은 미완료다. 최신 통합 보고서는 runs/cheonan/timesfm_vector_20261008_01/report.md다. 뉴론텍·Forcep jar 2품목 결과는 완료된 예비 실험이다. 전체 물류 효율화·보충 정책·소모품 LLM 분류는 후속 범위다. 서송·이푸른 데이터는 보존하며 새 결과에 자동 혼합하지 않는다. LAVAR 코드는 퇴역했고 필요하면 WORKSPACE_CLEANUP.md의 로컬 Git 기록에서 가져온다.
 
-This repository supports one paper using Seosong and Epurun hospital data. Do not introduce results, prose, paths, or artifacts for other hospitals unless the user explicitly expands the study scope.
+정중하고 격식 있는 한국어로 요청한 사항에만 답하고 결론을 먼저 쓴다. 농담·비속어·과장·자기비하는 사용하지 않는다. 지적은 즉시 반영하며 부족한 결과는 부족한 점과 대안을 명시한다. 해결 방법 요청에는 결론 2–3문장, 인용 블록의 실행 단계, 인용 블록의 원인 요약 순으로 작성하고 필요한 상세만 추가한다. Python을 기본 언어로 사용한다.
 
-The main code areas are:
+2026-10-11 이푸른·서송의 별도 약품 20개 TimesFM 예측 정확도 실험을 완료했고 최신 통합 보고서 부록 3·4와 같은 날짜 outbound PDF에 반영했다. 이푸른은 처방·청구 기록 수, 서송은 외래 처방 기록 수이며 실제 소모 단위·발주량 검증으로 표시하지 않는다. 서송 입원·병동 자료는 과거 입원일 역추가 위험으로 제외했다. 선정 명단 20개를 유지하되 평가 불가 품목을 명시하고 평균에 들어간 품목 수를 표시한다. 병원별 실행은 runs/epurun/·runs/seosong/, 집계는 data/processed/<병원>/analysis/에 별도로 보존하며 주문 정책은 실행하지 않았다. 재현 계약은 research/methods/TIMESFM_EXTERNAL.md다.
 
-- `lavar/`: reusable LAVAR model, training, and evaluation implementation.
-- `paper_code/`: paper-specific preprocessing, checkpoint reconstruction, metrics, ensemble logic, and reporting.
-- `scripts/`: thin command-line entry modules.
-- `configs/`: selected hospital/model specifications.
-- `data/`: raw inputs and processed model matrices.
-- `models/`: packaged rolling Stage 1 and Stage 2 checkpoints.
-- `results/`: run metadata, blend-selection evidence, and final outputs.
-- `reports/`: result notebooks, manuscripts, and compiled reports.
+## 구조와 정리
 
-## Python coding convention
+- 루트에는 안내·규칙·Git 설정과 현재 필요한 디렉터리만 둔다.
+- research/: 최신 계획·독립 검토·정리 기록. 이전 문서는 research/history/에 보존하고 최신 진입점은 하나만 유지한다.
+- data/external/: 외부 참조 원본도 불변이며 비공개 Git 제외. 변환은 data/processed/external/에 쓰고 해시·행·열·공란을 검증한다. 분류·허가·취소·코드 연결의 당시 유효시점을 확인하기 전 최신 정보를 과거 예측에 주입하지 않는다.
+- data/raw/: 원자료 불변. 삭제·이름 변경·내용 수정·외부 복사를 금지한다.
+- data/processed/cheonan/original/: 무손실 Parquet 불변. 다른 병원의 기존 가공 자료도 요청 없이 삭제하지 않는다.
+- data/processed/cheonan/diagnostics/: 기존 집계·품질·그림 근거.
+- 새 데이터셋은 data/processed/cheonan/analysis/<dataset_id>/에 manifest와 함께 저장한다. 원본 위에 덮어쓰지 않는다.
+- 연구 실행 코드는 src/methods/<방법론>/에, 실행 계약·재현 방법은 research/methods/<방법론>.md에 보존한다. 실험 설정과 실행 당시 코드 해시를 함께 남긴다.
+- 실제 구현 시에만 src/, tests/, configs/와 의존성 명세를 만든다. 사용하지 않는 골격·중복 명령 스크립트를 만들지 않는다.
+- 모델·예측·지표·그림·보고서·실패 기록은 runs/cheonan/<run_id>/에 모은다. models/results/reports로 분산시키지 않는다.
+- 임시 실험은 임시 경로에 두고 필요성이 확정된 재사용 코드만 편입한다.
+- 삭제 전 미커밋·미추적 파일을 포함한 복구 가능한 로컬 Git 참조를 만들고 목록·참조·검증을 기록한다. 데이터를 새로 Git에 추가하거나 외부로 push하지 않는다.
+- 정리 전후 보존 데이터의 목록·크기·SHA-256을 비교하고 현재 문서 링크·실행 의존성을 갱신한다.
 
-### 1. A function must be understandable from its name and signature alone
+## 과학적 계약
 
-A reader at the call site must be able to tell what a function does without opening its body or following nested definitions. If understanding a call requires descending into implementations, the naming has failed.
+- 사용자 제공 업무 기준 '사용기록 1행 = 약품 기본 단위 1개'를 채택한다. 반복 행도 모두 센다. 기관 공식 확인·법률 검증이 완료되었다고 표현하지 않는다.
+- 평균 대입·임의 보완·원본 평활화·중복 삭제를 금지한다. 무기록은 자동 0이 아니며 추출 완전성과 취급 범위가 확인된 경우만 관측 0으로 정의한다.
+- 입고 포장과 사용 기본 단위의 환산을 확인한다. 누적 입출고 잔액을 실제 재고로 표시하지 않는다.
+- 사건일과 자료 가용시각을 구분한다. 미래 행에서 발견한 과거 환자 사건을 앞선 원점에 역추가하지 않는다.
+- 입력·학습 라벨은 원점 컷오프 이전에 완료·가용해야 한다. 전처리·품목 선정·튜닝·분류·평가 분모는 지정된 과거 구간에서만 결정한다.
+- v1.14 사용자 지정 고빈도 코호트는 2020–2022년 약품 사용 행 수·물품 양의 출고 기록 일수로 선정한다. 이는 임상/제품 그룹 분류와 별개이며 상관·시계열 거리·미래 성적으로 재선택하지 않는다. 제품 코드 연결·단위·선정/제외 사유를 동결하고 약품 20채널·물품 약 10채널을 별도 예측한다.
+- 소비 패턴을 약품 그룹 구성에 전혀 사용하지 않는다. 학습기간의 소모량·빈도·변동·상관·시계열 거리도 분류·분할·대표 그룹 선택 입력에서 제외한다. ATC·성분·함량·제형·경로·단위만으로 고정하고 그룹 함수의 소비 변경 불변성을 검사한다.
+- 같은 ATC를 제네릭/임상적 대체 관계로 확정하지 않는다. A→B→A 전환은 가능성으로 다루고 실제 원인은 근거 있는 공지·업무 기록 없이는 추정하지 않는다. 미래 상품 배분을 과거 입력에 넣지 않는다.
+- 그룹 총량은 수량 비교가 가능한 같은 단위·함량·제형·경로 조건에만 계산한다. 품목별 원본 목표를 보존하고 총량 성능과 상품 배분 오차를 함께 보고한다. 다변량/독립 batch를 구분하고 rank·표본 수·공통 관측·장치 사용량을 검사한다.
+- 약품 k_y와 환자 k_p를 독립 선택하고 공통 원점·관측 범위·목표·MASE 분모를 맞춘다.
+- Expanding 학습, 월별 모수 적합, 주별 평가, 일별 정책 추론을 구분한다. TimesFM 고정 가중치를 Expanding 재학습이라고 부르지 않는다.
+- 정부 정책은 당시 발표된 일정만 입력한다. 거리두기 대응기간을 생물학적 감염병 발발·종식으로 표현하지 않는다.
+- 2024년은 사전 EDA가 있었던 후향적 평가다. 최종 결과로 설정·코호트·정책을 재선택하지 않는다.
+- 실패·미지원·표본 부족·음의 기준선 개선·공급 목표 미달을 저장한다. 기존 또는 naive 결과로 조용히 대체하지 않는다.
+- 예측 기여와 인과 효과, 모의 개선과 실제 운영 성과를 구분한다. 인용·윤리 승인·기관 확인을 만들어내지 않는다.
 
-- Function names state action and target: `process()`, `handle_data()`, and `do_stuff()` are too vague; prefer `build_model_ready_data()`, `reconstruct_component_predictions()`, or `calculate_confidence_intervals()`.
-- Variable names describe their contents: `res`, `tmp`, `d`, and `arr` are too vague; prefer `fold_metrics`, `checkpoint_path`, `target_date`, or `seed_predictions`.
-- Conventional mathematical names such as `X`, `y`, `T`, `H`, `Dx`, and `Dy` are acceptable inside numerical model code when their shapes and meanings are established by the interface.
-- Boolean names are predicates: `selection`, `retry`, and `fallback` are too vague; prefer `has_selected_model`, `should_retrain`, or `was_fallback_used`.
-- The name must match the behavior. Do not hide file writes, checkpoint creation, result regeneration, or other side effects behind neutral names. If a side effect exists, surface it in the name, signature, documentation, or structured return value.
-- Comments carry only what names cannot: scientific constraints, tradeoffs, invariants, and reasons. A comment that merely restates the code is a signal that the name should improve.
-- Never put an inline comment on trivial code.
+## 구현·검증·재현
 
-Bad:
+- TimesFM 실제 사용 방식은 research/methods/TIMESFM_VECTOR_PLAN.md의 A–H 실행 계약을 따른다. 고정 가중치·native decode 관측 마스크·환자 마지막 28일 제한·중앙값 및 비음수 처리·공통 정책 조건을 유지하고, 미실행 후보를 실행한 것으로 쓰지 않는다. 체크포인트 정확 재현은 기록 revision과 파일 해시를 확인한다. 기존 entrypoint의 revision 자동 고정 및 일반 설정 전달은 미구현이다.
 
-```python
-def process(data):
-    # get results
-    res = calculate(data)
+- 함수 이름과 명세에 동작·입출력·파일 쓰기 등 부작용을 드러낸다. 변수·지표는 내용과 집계 수준을 명확히 한다.
+- 공개 함수와 비단순 보조 함수에 타입을 명시한다. Path와 구조화된 반환값을 사용하고 경로·설정·병원·시드·날짜를 명시적으로 전달한다.
+- 읽기·변환·계산·검증·쓰기를 분리하고 날짜 정렬·열 순서·단위·형상을 경계에서 검사한다.
+- import는 future, 표준, 외부, 내부 모듈 순으로 그룹화하고 각 그룹을 정렬한다.
+- 코드 변경은 컴파일과 집중 동작 검사를 수행한다. 데이터 변경은 날짜·열·누락·값·해시를 검증한다.
+- 확장 전 합성자료와 3–5품목에서 호환·누출 불변성·출력 정렬·자원 사용을 확인한다. 미래 관측 변경이 과거 입력·예측을 바꾸면 안 된다.
+- run manifest에 계획 버전·Git 상태·자료 해시·설정·품목 선정·컷오프·라벨 종료·모델·체크포인트·라이선스·자원·실패 사유를 기록한다.
+- 계획·설정·보고 정의를 동기화한다. 퇴역 문서나 validator를 현재 필수 의존성으로 남기지 않는다.
 
-    # save results
-    save(res)
-```
+## 개인정보
 
-Good:
+환자 수준 행·식별값을 출력·보고·외부 전송하지 않는다. 집계 진단·합성 예시를 사용한다. 데이터와 실행 산출물은 Git 제외 상태를 유지하고 공개 저장소에 새로 추가하지 않는다.
 
-```python
-def calculate_and_write_seed_metrics(
-    seed_predictions: pd.DataFrame,
-    output_path: Path,
-) -> Path:
-    fold_metrics = calculate_seed_fold_metrics(seed_predictions)
-    fold_metrics.to_csv(output_path, index=False)
-    return output_path
-```
+## 필수 X 입력 계약 (v1.11)
 
-### 2. Prefer typed, explicit Python interfaces
+- 미래 대상일 요일·대한민국 공식 공휴일, 과거 전체/남녀·입원/외래·10세 단위 연령·KCD 공식 대분류 환자 수, 정부 거리두기 대응기간 Boolean은 주 모형의 필수 입력이다. 개별 검정 결과로 임의 누락하지 않는다.
+- 환자는 원점 전날까지의 독립 지연 길이로 집계한다. A/B 및 D/H 경계를 포함한 공식 KCD 범위와 10세 연령 구간을 사용한다. 공란·분류불가는 별도 범주로 보존한다.
+- 미래 날짜의 요일은 이미 알려진 입력이다. 임시/대체공휴일 및 정부 대응기간 변경은 당시 공개된 발표만 사용한다.
+- 병원 상품 전환·진료·구매정책은 이번 연구 범위와 모형 입력에서 제외한다.
 
-Keep boundaries clear between preprocessing, model training, checkpoint reconstruction, evaluation, and reporting.
+## 분석 보고서 작성 순서
 
-- Add type annotations for new public functions and non-trivial helpers.
-- Prefer dataclasses, pydantic models, typed dictionaries, or small domain objects over passing loosely shaped dictionaries through several layers.
-- Return structured values instead of positional tuples whose meaning must be remembered at every call site.
-- Pass configuration, paths, hospital names, seeds, dates, and devices explicitly. Avoid hidden mutable global state.
-- Use `pathlib.Path` for filesystem paths.
-- Keep command-line modules thin. Put reusable logic in `paper_code/` or `lavar/`.
-- Do not add `*` to every function by default. Use ordinary positional-or-keyword parameters for short, required inputs whose meaning is clear from the function and parameter names. Use keyword-only parameters for options, flags, same-typed values that are easy to swap, or values whose meaning should be forced at the call site.
-- Document array and tensor shapes at public numerical boundaries.
-- Preserve dataframe index and column contracts explicitly when functions cross preprocessing or checkpoint boundaries.
+보고서 본문은 반드시 다음 순서로 작성한다: 실제 약품/물품 이름과 예측 목표 → 사용 변수와 시간 범위 → 모델 → 피팅·재적합·예측 절차 → 실제값/예측 그림과 관찰 → 수치와 해석. 품목 코드나 모형 지표를 대상 이름보다 먼저 제시하지 않는다. 코드·해시·감사는 상세 부록에 연결하고 미실행 대상을 실행한 것처럼 표현하지 않는다.
 
-Bad:
+## v1.12 보고서와 효용성
 
-```python
-def run(h, p, x, y, a=False):
-    return train(x, y), evaluate(x, y)
-```
+- 제목·소제목은 질문형 대신 명사형/서술형으로 작성한다.
+- 약품 소모량과 물품 기록 출고량을 구분하고 실제 주문량으로 표시하지 않는다. 물품의 무기록은 0수요가 아니다. 관측 평가 범위를 표시한다.
+- 효용성에는 논문 서지·출처·수식·기호·가정·평가 기간·단위·해석을 모두 명시한다. 연구자가 정의한 정규화 점수와 선행논문의 모델을 구분한다.
+- 비중복 평가 기간을 사용하며 실제 비용/재고/납기가 없는 가정 평가를 실제 물류 개선으로 표시하지 않는다.
 
-Good:
+- 주문 효율의 주 비교는 예측 활용 정책 대 예측 미활용 정책이다. 주간 단순 예측과의 정확도·비용 비교를 이 효과의 증거로 쓰지 않는다. 공통 운영 조건과 서비스 목표를 맞추고 실제 현행 정책과 연구 가정 대조 정책을 구분한다.
 
-```python
-@dataclass(frozen=True)
-class HospitalRunResult:
-    hospital: str
-    checkpoint_paths: tuple[Path, ...]
-    fold_metrics: pd.DataFrame
-
-
-def train_and_evaluate_hospital_model(
-    hospital: str,
-    config: LAVARConfig,
-    covariates: pd.DataFrame,
-    targets: pd.DataFrame,
-    *,
-    should_force_retraining: bool = False,
-) -> HospitalRunResult:
-    ...
-```
-
-### 3. No silent fallback to old or different behavior
-
-When replacing an implementation, the new implementation replaces the old one. It must not quietly delegate back to a legacy path. Hidden exception handling or conditional fallback masks failures, keeps dead code alive, and makes scientific behavior impossible to audit.
-
-- Replace fully. When a migration lands, remove the superseded path in the same change.
-- Failures surface. Raise or propagate unexpected errors instead of returning plausible-looking output.
-- Never substitute cached, legacy, naive, or partial results merely to make a pipeline complete successfully.
-- If a fallback is scientifically or operationally required, it must be explicit and observable: gated by a named condition, recorded in logs or returned metadata, and documented in the result interpretation.
-- A fallback must preserve enough context to identify which folds, targets, or predictions used it.
-
-Bad:
-
-```python
-def reconstruct_predictions(checkpoint_path: Path) -> pd.DataFrame:
-    try:
-        return reconstruct_predictions_from_checkpoint(checkpoint_path)
-    except Exception:
-        return load_legacy_predictions()
-```
-
-Good:
-
-```python
-def reconstruct_predictions(
-    checkpoint_path: Path,
-    *,
-    allow_recorded_naive_fallback: bool = False,
-) -> PredictionResult:
-    try:
-        return reconstruct_predictions_from_checkpoint(checkpoint_path)
-    except NonFinitePredictionError:
-        if not allow_recorded_naive_fallback:
-            raise
-
-        fallback_result = build_naive_fallback_prediction(checkpoint_path)
-        return replace(fallback_result, was_fallback_used=True)
-```
-
-### 4. Keep functions focused and boundaries visible
-
-- Separate reading, transformation, computation, validation, and writing when they are independently useful or independently testable.
-- A function may coordinate several steps, but its name and return type must make that orchestration clear.
-- Prefer pure helpers for metric and dataframe transformations.
-- Keep model construction separate from checkpoint loading and state mutation.
-- Validate assumptions at boundaries: aligned indexes, expected columns, supported hospitals, matching ground truth, valid tensor shapes, and resolvable checkpoint signatures.
-- Avoid deep nesting. Use early validation and focused helpers when branches represent distinct scientific cases.
-
-### 5. Preserve scientific meaning in names and types
-
-- Distinguish `prediction`, `ground_truth`, `naive_prediction`, and `ensemble_prediction` explicitly.
-- Distinguish within-seed, across-seed, within-fold, and across-fold summaries.
-- Use `p95_fold_mse` for the 95th percentile of fold MSE; do not shorten it to an ambiguous `p95` at public boundaries.
-- Do not call cross-seed empirical quantiles calibrated prediction intervals.
-- A metric name must reveal its aggregation level when confusion is possible, such as `mean_of_seed_mean_mse` rather than a generic `average_error`.
-- Do not use “best,” “robust,” “validated,” or “production” in an API or artifact name unless the corresponding decision rule is defined and satisfied.
-
-### 6. Keep imports grouped and ordered
-
-Organize imports into four groups in this order. Separate each non-empty group with exactly one blank line, and sort imports alphabetically within each group.
-
-1. Future imports
-2. Standard-library imports
-3. Third-party library imports
-4. Local application imports, including package-relative imports
-
-```python
-# 1. Future imports
-from __future__ import annotations
-
-# 2. Standard library imports
-import json
-import os
-import sys
-
-# 3. Third-party library imports
-from flask import Flask
-import numpy as np
-import requests
-
-# 4. Local application imports
-from my_project.models import User
-from .utils import calculate_score
-```
-
-The numbered comments above demonstrate the grouping and are not required in source files. Do not mix imports from different groups, place ordinary imports before a future import, or insert unrelated executable code between imports. Avoid wildcard imports. Keep imports at module scope unless a local import is required to prevent a documented circular dependency, defer an optional dependency, or avoid a measured startup cost.
-
-## Scientific integrity
-
-- Treat `data/raw/` as immutable. Preprocessing writes only to `data/processed/`.
-- Never modify checkpoints or reported metrics merely to make validation pass.
-- Preserve temporal order. Training data for a rolling fold must end strictly before its forecast window.
-- Fit scalers, density buckets, and learned parameters only on information available at the fold training boundary.
-- Keep hospital definitions, horizon, fold step, seeds, and ensemble weights synchronized with `configs/` and the executed artifacts.
-- Report negative skill against the naive baseline plainly.
-- Distinguish model-selection evidence from final rolling evaluation.
-- Do not fabricate citations, author metadata, ethics approvals, institutional statements, or clinical interpretations.
-
-## Model invariants
-
-- Changing `latent_dim`, encoder/decoder dimensions, Stage 1 input columns, or `dyn_p` requires refitting Stage 1 and dependent Stage 2 heads.
-- Do not unfreeze or independently replace the shared Stage 1 backbone during Stage 2 training.
-- Density-bucket target indices are part of the Stage 2 checkpoint contract and must remain aligned with target columns and head weights.
-- Every Stage 2 checkpoint must resolve to its recorded Stage 1 signature.
-- S04/S11 predictions must match on hospital, seed, fold, horizon, target, and ground truth before blending.
-
-## Paper and documentation synchronization
-
-When changing substantive claims, keep these files synchronized in the same change:
-
-- `README.md`
-- `MODEL_EXPLANATION.md`
-- `lavar/LAVAR_README.md`
-- `lavar/LAVAR_README_KOR.md`
-- `lavar/LAVAR_README_JPN.md`
-
-Hospital summaries under `results/` must be generated from or checked against their CSV artifacts. Do not hand-edit result numbers without verification.
-
-## Validation expectations
-
-Use checks proportional to the change.
-
-- For Python changes, compile the affected modules and run the package validator.
-- For documentation changes, search for out-of-scope hospital names, broken relative links, stale experiment numbering, and inconsistencies with final metric CSVs.
-- For preprocessing changes, compare shapes, date indexes, column order, missingness, and values with the previous committed artifacts.
-- For model changes, exercise a small or resumed path before starting an expensive reconstruction.
-- Add or update focused tests when behavior changes. Do not rely on successful imports alone.
-
-## Privacy
-
-Assume raw hospital data is sensitive. Do not print patient-level rows, copy raw inputs outside approved storage, upload them to external services, or include identifiable values in reports. Prefer aggregate diagnostics and synthetic examples.
+- 물류 예측과 주문 정책 효율성은 하나의 통합 보고서에서 방법·수식·그림·수치를 모두 제시한다. 별도 문서를 읽어야 주 결과를 이해할 수 있게 분리하지 않는다. 실행별 원장·지표·원천 보고서는 재현용으로 보존하되 사용자 진입점은 통합 보고서 하나다.

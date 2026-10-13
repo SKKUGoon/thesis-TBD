@@ -1,0 +1,21 @@
+{
+  "forecast_run": "runs/cheonan/boosting_two_items_20261007_01",
+  "policy_development_phase": "validation",
+  "evaluation_phase": "evaluation",
+  "review_days": 1,
+  "lead_days": [1, 3],
+  "holding_cost_unit_day": 1.0,
+  "shortage_cost_units": [10.0, 50.0, 100.0],
+  "order_fixed_cost": 5.0,
+  "service_target": 0.95,
+  "safety_std_multipliers": [0, 0.5, 1, 1.5, 2, 3, 4],
+  "primary_lead_days": 1,
+  "primary_shortage_cost": 50.0,
+  "stock_reference_end": "2022-12-31",
+  "initial_stock_quantile": 0.95,
+  "development_end": "2023-12-21",
+  "evaluation_end": "2024-12-26",
+  "shortage_handling": "lost units; no backlog or repeat penalties",
+  "material_missingness": "contiguous recorded-date segments, common stock reset at each gap; never zero fill",
+  "units": "basic units and normalized hypothetical costs; package conversion unverified"
+}

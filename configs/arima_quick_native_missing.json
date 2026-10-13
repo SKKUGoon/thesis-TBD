@@ -1,0 +1,22 @@
+{
+  "plan_version": "1.8",
+  "run_role": "exploratory_native_missing_recorded_count_pilot",
+  "zero_semantics_confirmed": false,
+  "historical_metadata_mode": "retrospective_metadata_grouping",
+  "availability_delay_days": 1,
+  "availability_basis": "explicit_unverified_one_day_scenario",
+  "horizon_days": 14,
+  "maximum_iterations": 200,
+  "candidate_orders": [[1, 0, 0], [2, 0, 0], [1, 1, 0], [0, 1, 1]],
+  "initial_end": "2022-12-31",
+  "development_start": "2023-01-01",
+  "development_end": "2023-06-30",
+  "validation_start": "2023-07-01",
+  "validation_end": "2023-12-31",
+  "evaluation_start": "2024-01-01",
+  "evaluation_end": "2024-12-31",
+  "allocation_window_candidates": [7, 28],
+  "minimum_development_vectors": 20,
+  "original_directory": "data/processed/cheonan/original",
+  "catalog_path": "data/processed/external/atc/original/atc.parquet"
+}

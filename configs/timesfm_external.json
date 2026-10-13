@@ -1,0 +1,17 @@
+{
+  "run_date": "20261011",
+  "dataset_id": "timesfm_external_20261011_01",
+  "hospitals": ["epurun", "seosong"],
+  "items_per_hospital": 20,
+  "checkpoint": "google/timesfm-3.0-pytorch",
+  "checkpoint_revision": "43046b85ec22d584a13f8098c2ed39c889e129c2",
+  "official_commit": "e51928e27119cb17bebc005be2696b75e0a9e688",
+  "target_context_candidates": [28, 56, 112],
+  "patient_days": 28,
+  "horizon": 14,
+  "development": ["2023-01-02", "2023-06-12"],
+  "evaluation": ["2024-01-01", "2024-12-16"],
+  "calendar": "data/processed/external/korean_calendar/calendar_20261007_01",
+  "device": "mps",
+  "scope": "Prescription/claim record-count prediction only; no order policy"
+}

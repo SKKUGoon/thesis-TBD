@@ -1,0 +1,20 @@
+{
+  "plan_version": "1.12",
+  "drug_dataset": "data/processed/cheonan/analysis/arima_native_missing_20261007_01",
+  "patient_dataset": "data/processed/cheonan/analysis/patient_standard_20261007_02",
+  "material_movements": "data/processed/cheonan/diagnostics/material_audit_20261006/unambiguous_recorded_daily_movements.parquet",
+  "material_catalogue": "data/processed/cheonan/diagnostics/material_audit_20261006/item_catalogue_and_quality.parquet",
+  "material_code": "ds14",
+  "calendar_reference": "data/processed/external/korean_calendar/calendar_20261007_01",
+  "patient_lags": 28,
+  "drug_lags": 7,
+  "horizon_days": 14,
+  "boost_rounds": 120,
+  "seed": 20261007,
+  "threads": 4,
+  "underage_overage_ratios": [1, 4, 9],
+  "selection": "Existing named drug and previously inspected Forcep jar; no new outcome-based selection",
+  "tuning": "Fixed pilot budget and common lag inputs; not optimized for each boosting family",
+  "material_target": "Observed recorded issue quantity; missing dates stay NaN; no claim of physical consumption or zero demand",
+  "utility": "Point-forecast-based provisioning proxy; no real inventory trajectory or realized hospital costs"
+}

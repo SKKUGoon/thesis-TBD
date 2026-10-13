@@ -1,18 +1,13 @@
 .DS_Store
-.ipynb_checkpoints/
-.pytest_cache/
-.ruff_cache/
 .venv/
 __pycache__/
 *.py[cod]
-
-# Local tabular exports may contain sensitive or unmasked records.
-*.csv
-!/results/*/run_metadata/runs/*/fold_metrics.csv
-
-# Raw hospital records are sensitive and must remain local. Only the public
-# reference Parquet files are included for reproducibility.
-data/raw/*
-!data/raw/references/
-data/raw/references/*
-!data/raw/references/*.parquet
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+data/raw/
+data/processed/
+runs/
+data/external/
+/outbound/

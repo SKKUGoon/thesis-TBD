@@ -1,0 +1,21 @@
+{
+  "plan_version": "1.10",
+  "run_role": "exploratory_recorded_group_count_patient_composition_comparison",
+  "group_dataset": "data/processed/cheonan/analysis/arima_native_missing_20261007_01",
+  "patient_dataset": "data/processed/cheonan/analysis/patient_composition_20261007_01",
+  "horizon_days": 14,
+  "availability_delay_days": 1,
+  "seed": 20261007,
+  "variants": ["drug_calendar", "patient_total", "patient_composition"],
+  "lag_pairs": [[7,7], [7,28], [28,7], [28,28]],
+  "xgboost_parameters": {"objective": "reg:squarederror", "tree_method": "hist", "device": "cpu", "max_depth": 3, "eta": 0.05, "min_child_weight": 20, "subsample": 1.0, "colsample_bytree": 0.8, "lambda": 10, "max_bin": 64, "nthread": 4},
+  "boost_rounds": 120,
+  "ridge_alphas": [1, 10],
+  "development_start": "2023-01-01", "development_end": "2023-06-30",
+  "validation_start": "2023-07-01", "validation_end": "2023-12-31",
+  "evaluation_start": "2024-01-01", "evaluation_end": "2024-12-31",
+  "forecast_design": "pooled direct horizon-aware regression, one model per monthly refit and variant; h=1..14 are inputs; no future actual stochastic inputs",
+  "window": "expanding",
+  "refit": "first Monday origin each month",
+  "zero_semantics_confirmed": false
+}

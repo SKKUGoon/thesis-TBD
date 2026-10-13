@@ -1,5 +1,0 @@
-[console_scripts]
-paper-prepare-data = scripts.prepare_data:main
-paper-reproduce-results = scripts.reproduce_results:main
-paper-train-models = scripts.train_models:main
-paper-verify = scripts.verify_package:main

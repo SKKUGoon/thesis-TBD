@@ -1,42 +1,26 @@
 [project]
-name = "lavar"
+name = "cheonan-single-group-forecasting"
 version = "0.1.0"
-description = "LAVAR: Latent Autoencoder VAR for healthcare supply forecasting"
-readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
-    "matplotlib>=3.10.7",
-    "numpy>=2.3.3",
-    "openpyxl>=3.1.5",
-    "pandas>=2.3.3",
-    "pyarrow>=23.0.1",
-    "torch>=2.9.1",
-    "pydantic>=2.0",
+    "numpy==2.5.3",
+    "pandas==3.0.6",
+    "pyarrow==25.0.1",
+    "statsmodels==0.15.0",
+    "matplotlib==3.11.2",
+    "xgboost==3.4.1",
+    "scikit-learn==1.9.1",
+    "holidays==0.106",
+    "catboost==1.2.10",
+    "lightgbm==4.7.0",
+    "torch==2.14.1",
+    "timesfm[torch] @ git+https://github.com/google-research/timesfm.git@e51928e27119cb17bebc005be2696b75e0a9e688",
+    "python-calamine>=0.8.3",
 ]
-
-[project.scripts]
-paper-prepare-data = "scripts.prepare_data:main"
-paper-reproduce-results = "scripts.reproduce_results:main"
-paper-train-models = "scripts.train_models:main"
-paper-verify = "scripts.verify_package:main"
-
-[build-system]
-requires = ["setuptools>=80"]
-build-backend = "setuptools.build_meta"
 
 [dependency-groups]
-dev = [
-    "ipykernel>=6.30.1",
-    "pytest>=8.4.2",
-    "ruff>=0.12.12",
-]
+dev = ["pytest==9.1.1"]
 
-[tool.ruff]
-line-length = 100
-target-version = "py312"
-
-[tool.ruff.lint]
-select = ["B006", "B008", "E", "F", "I"]
-
-[tool.setuptools.packages.find]
-include = ["lavar*", "paper_code*", "scripts*"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
