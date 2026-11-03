@@ -1,0 +1,17 @@
+import type { components } from './schema';
+export type Schema = components['schemas'];
+export type Principal = Schema['Principal'];
+export type Scenario = Schema['Scenario'];
+export type Item = Schema['Item'];
+export type Inventory = Schema['Inventory'];
+export type Forecast = Schema['Forecast'];
+export type ForecastValue = Schema['ForecastValue'];
+export type Proposal = Schema['Proposal'];
+export type Order = Schema['PurchaseOrder'];
+export type Job = Schema['Job'];
+export type Delivery = Schema['Delivery'];
+export type Accepted = Schema['Accepted'];
+export type Decision = Schema['Decision'];
+export type Receipt = Schema['Receipt'];
+export type Journal = {owner:string;scope:string;path:string;body:string;key:string;createdAt:string;accepted?:{job_id:string;resource_id?:string;scenario_id?:string}};
+export type Workspace = {scenario:Scenario;principal:Principal;items:Item[];inventory:Inventory[];jobs:Job[];forecasts:Forecast[];proposals:Proposal[];orders:Order[];deliveries:Delivery[]};

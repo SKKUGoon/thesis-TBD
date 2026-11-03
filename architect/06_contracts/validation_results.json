@@ -1,0 +1,45 @@
+{
+  "checked_on": "2026-10-21",
+  "scope": "specification and isolated structural validation; no HTTP/worker implementation tests",
+  "openapi": {
+    "version": "3.1.0",
+    "operations": 35,
+    "paths": 33,
+    "schemas": 62,
+    "schema_valid_examples": 301,
+    "invalid_cutoff_and_zero_receipt_rejected": true
+  },
+  "postgresql": {
+    "version": "18.6",
+    "tables": 46,
+    "foreign_keys": 128,
+    "isolation": "temporary container; network none; no host ports; synthetic fixture only; rolled back",
+    "passed_assertions": [
+      "cross-scope FK",
+      "duplicate item/day/revision",
+      "missing versus zero",
+      "negative quantity",
+      "NaN quantity",
+      "sealed snapshot child write",
+      "sealed snapshot parent change",
+      "No cannot create purchase order",
+      "receipt line from another order",
+      "global scenario create idempotency",
+      "RLS same-scope visibility",
+      "RLS cross-scope invisibility"
+    ],
+    "temporary_container_removed": true
+  },
+  "documentation": {
+    "local_links_checked": 62,
+    "api_table_references_checked": true
+  },
+  "sha256": {
+    "API_SPEC.md": "859b61b799dc3738e4f289509541f524ea3b74f90092c970e1d729e75e8aecf9",
+    "DATABASE_SCHEMA.md": "f5a695389e48356c57d250452e56a0f7da1c9faa6829eb225892a12d65de9942",
+    "BUSINESS_COVERAGE.md": "b54a517a1af220b81fb9f415030a53a8d732152f119b5a6db092844cc9a8a3f3",
+    "openapi.json": "9676d4a5bd0b702f64c4f1dff6a2a695600dd1a6c08e4afafc840613b9197b8d",
+    "schema.sql": "230d7920cc15541a2b02d55fe49a8a34930b93b0aa1f6a9cb2b6f247ec026f61",
+    "examples/weekly_delivery.json": "d370f4eb1a6fa4d98f0e9ee3d302a7568fc11b5fbef0c9a1366e86d83fbb69b3"
+  }
+}

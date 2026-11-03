@@ -1,0 +1,5293 @@
+{
+  "schema_version": 1,
+  "week_start": "2026-10-19",
+  "week_end_exclusive": "2026-10-26",
+  "source_revision": 1,
+  "supersedes_delivery_id": null,
+  "source_closed_at": "2026-10-26T00:00:00+09:00",
+  "source_available_at": "2026-10-26T00:00:00+09:00",
+  "is_complete": true,
+  "model_version_id": "00000000-0000-4000-8000-000000000005",
+  "usage": [
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000002",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000003",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000004",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000005",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000006",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000007",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000008",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000009",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000010",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000011",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000012",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000013",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000014",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000015",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000016",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000017",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000018",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000019",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000020",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000021",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000022",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000023",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000024",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000025",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-19",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-20",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-21",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-22",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-23",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-24",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000026",
+      "day": "2026-10-25",
+      "quantity": "5",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-19",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-20",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-21",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-22",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-23",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-24",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000027",
+      "day": "2026-10-25",
+      "quantity": "6",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-19",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-20",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-21",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-22",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-23",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-24",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000028",
+      "day": "2026-10-25",
+      "quantity": "7",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-19",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-20",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-21",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-22",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-23",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-24",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000029",
+      "day": "2026-10-25",
+      "quantity": "8",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-19",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-20",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-21",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-22",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-23",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-24",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "item_id": "10000000-0000-4000-8000-000000000030",
+      "day": "2026-10-25",
+      "quantity": "9",
+      "observation": "observed",
+      "unit": "개",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    }
+  ],
+  "patients": [
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "total__ALL",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__M",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__F",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sex__OTHER",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__IN",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OUT",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "encounter__OTHER",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__0_9",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__10_19",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__20_29",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__30_39",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__40_49",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__50_59",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__60_69",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__70_79",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__80_89",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__90_99",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__100_109",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__110_119",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__120_129",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "age__MISSING_INVALID",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__I",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__II",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__III",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__V",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__VIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__IX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__X",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XVIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XIX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__XXII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__MISSING",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "main_kcd__INVALID",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-19",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-20",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-21",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-22",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-23",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-24",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__I",
+      "day": "2026-10-25",
+      "value": 10,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__II",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__III",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__V",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__VIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__IX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__X",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XV",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XVIII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XIX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XX",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXI",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__XXII",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__MISSING",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-19",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-20",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-21",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-22",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-23",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-24",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    },
+    {
+      "feature_key": "sub_kcd__INVALID",
+      "day": "2026-10-25",
+      "value": 0,
+      "observation": "observed",
+      "available_at": "2026-10-26T00:00:00+09:00"
+    }
+  ],
+  "inventory": {
+    "as_of": "2026-10-26T00:00:00+09:00",
+    "source_version": "SYN-STOCK-001",
+    "lines": [
+      {
+        "item_id": "10000000-0000-4000-8000-000000000001",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000002",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000003",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000004",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000005",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000006",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000007",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000008",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000009",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000010",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000011",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000012",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000013",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000014",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000015",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000016",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000017",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000018",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000019",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000020",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000021",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000022",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000023",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000024",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000025",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000026",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000027",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000028",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000029",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      },
+      {
+        "item_id": "10000000-0000-4000-8000-000000000030",
+        "on_hand": "100",
+        "unavailable": "0",
+        "allocated": "0",
+        "unit": "개"
+      }
+    ]
+  },
+  "open_orders": []
+}

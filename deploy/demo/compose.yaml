@@ -1,0 +1,37 @@
+name: mtech-demo
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    volumes:
+      - ./private:/private:ro
+      - ./config.json:/config/config.json:ro
+      - state:/state
+    mem_limit: 256m
+    cpus: 0.5
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/live')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks: [private]
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    ports: ['${BIND_ADDRESS:-127.0.0.1}:${WEB_PORT:-8090}:8080']
+    depends_on:
+      api: {condition: service_healthy}
+    mem_limit: 64m
+    networks: [private]
+volumes:
+  state:
+networks:
+  private:

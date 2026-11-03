@@ -11,3 +11,17 @@ data/processed/
 runs/
 data/external/
 /outbound/
+/deploy/.state/
+/deploy/.env
+/frontend/node_modules/
+/frontend/dist/
+/frontend/test-results/
+/frontend/playwright-report/
+
+# Private demo inputs, credentials and durable runtime state
+/deploy/demo/private/
+/deploy/demo/.env
+/deploy/demo/state/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm

@@ -1,5 +1,8 @@
 # 천안의료원 약품·물품 수량 예측과 공급 효용성 연구
 
+현재 서비스 화면은 **MTECH Demo v0.1**로 확정했습니다. 웹·경량 API 두 컨테이너에서 기존 예측을 재생하며, 시드는 사설 JSON에, 설정·진행 상태·이력은 SQLite 영구 볼륨에 저장합니다. [데모 실행 안내](deploy/demo/README.md) · [확정 범위](architect/13_PORTABLE_DEMO.md). 병원 자료·시드·DB·접속 정보·서버 이전 묶음은 저장소에 포함하지 않습니다.
+
+
 현재 계획 범위는 과거 사용기록이 많은 약품 20개와 물품 약 10개의 별도 TimesFM 벡터 예측 및 같은 코호트의 부스팅·주문 효용성 비교입니다. 품목 선정에는 2020–2022년만 사용합니다. 2026-10-08 TimesFM의 공동/독립 예측과 주 조건 주문 정책 비교를 MPS로 완료했습니다. 새 코호트 부스팅 비교와 실제 운영 검증은 미완료입니다. 기존 뉴론텍·Forcep jar 결과는 예비 실험으로 보존합니다. 물품 목표는 기록 출고수량입니다.
 
 약품 정보만으로 한 그룹을 고정하고 그 소모량을 ARIMA·VAR·XGBoost·TimesFM으로 예측·비교하는 연구입니다. 소비 패턴은 그룹 구성에 사용하지 않습니다. A→B→A 사용 상품 전환은 확인되지 않은 가능성으로 고려하고 그룹 총량과 개별 상품 배분을 구분합니다.
@@ -10,6 +13,10 @@
 - [기존 2품목 통합 물류 예측·주문 효율성 보고서](runs/cheonan/boosting_two_items_20261007_01/report.md)
 - [부스팅·효용성 방법론](research/methods/BOOSTING.md)
 - [최신 연구계획서 v1.14](research/RESEARCH_PROPOSAL.md)
+- [TimesFM 주간 예측·가상 주문 시스템 설계와 장애·승인·로깅 정책](architect/README.md)
+- [가상 물류 시스템 실행·테스트·서버 이전 안내](deploy/README.md)
+- [현재 MTeCH 실제 자료·예측 비교 화면](architect/11_RECORDED_DATA_AND_FORECAST_HISTORY.md)
+- [MTeCH 프론트엔드 API 연결과 브라우저 검증](architect/10_FRONTEND_IMPLEMENTATION.md)
 - [TimesFM 사용 방법·실행 기록·재현 계약](research/methods/TIMESFM_VECTOR_PLAN.md)
 - [이푸른·서송 약품 20개 TimesFM 실행 방법과 범위](research/methods/TIMESFM_EXTERNAL.md)
 - [병원 확장·동일 대상 비교군·추가 데이터 후속 계획](research/FOLLOWUP_VALIDATION_PLAN.md)
@@ -30,3 +37,5 @@
 - [작업 규칙](AGENTS.md)
 
 원자료·무손실 Parquet·기존 진단은 data/에 보존하며 이전 계획은 research/history/에 있습니다. LAVAR 코드는 로컬 Git 복구 참조에 퇴역했습니다. 실행 코드는 src/methods/<방법론>/, 방법론 설명은 research/methods/에 보존합니다. 민감한 자료·실행 산출물은 공개 Git 저장소에 추가하지 않습니다.
+
+현재 운영 UI는 [최신 대시보드 구현](architect/12_DASHBOARD_IMPLEMENTATION.md)을 따릅니다. 두 번째 대시보드를 유일한 UI로 확정했으며 이전 UI와 목업 진입점은 삭제했습니다.

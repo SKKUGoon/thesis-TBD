@@ -1,0 +1,128 @@
+name: paper-operations
+x-common: &common
+  image: paper-operations:eval-v1
+  build:
+    context: ..
+    dockerfile: deploy/Dockerfile.service
+  restart: unless-stopped
+  read_only: true
+  tmpfs: [/tmp]
+  environment: &env
+    BROKER_URL: amqp://operations:${BROKER_PASSWORD}@broker:5672/%2F
+    JWT_SECRET: ${JWT_SECRET}
+    CONTRACT_PATH: /app/contracts/openapi.json
+    SUPPLIER_URL: http://supplier:8001
+    ML_IMAGE_DIGEST: ${ML_IMAGE_DIGEST:-unregistered}
+    APP_SOURCE_SHA256: ${APP_SOURCE_SHA256:-unregistered}
+    APP_CODE_COMMIT: ${APP_CODE_COMMIT:-unregistered}
+    APP_CODE_DIRTY: ${APP_CODE_DIRTY:-1}
+  depends_on:
+    db: {condition: service_healthy}
+    broker: {condition: service_healthy}
+  networks: [private]
+services:
+  web:
+    image: paper-operations-web:eval-v1
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.web
+    ports: ['127.0.0.1:${WEB_PORT:-8090}:8080']
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    depends_on: [api]
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1:8080/]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks: [private]
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: migration
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: operations
+    volumes:
+      - postgres:/var/lib/postgresql
+      - ../architect/06_contracts/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/02-extension.sql:ro
+      - ./.state/roles.sql:/docker-entrypoint-initdb.d/03-roles.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U migration -d operations]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    networks: [private]
+  broker:
+    image: rabbitmq:4.1.4-management
+    environment:
+      RABBITMQ_DEFAULT_USER: operations
+      RABBITMQ_DEFAULT_PASS: ${BROKER_PASSWORD}
+    volumes: [rabbit:/var/lib/rabbitmq]
+    healthcheck:
+      test: [CMD, rabbitmq-diagnostics, -q, ping]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [private]
+  api:
+    <<: *common
+    volumes: ['./.state/records:/records:ro']
+    command: [uvicorn, src.operations.api:app, --host, 0.0.0.0, --port, '8000', --no-access-log]
+    ports: ['127.0.0.1:${API_PORT}:8000']
+    environment:
+      <<: *env
+      DATABASE_URL: postgresql://op_api:${DB_API_PASSWORD}@db/operations
+  ingestion:
+    <<: *common
+    environment:
+      <<: *env
+      ROLE: ingest
+      DATABASE_URL: postgresql://op_ingest:${DB_INGEST_PASSWORD}@db/operations
+  business:
+    <<: *common
+    volumes: ['./.state/records:/records:ro']
+    environment:
+      <<: *env
+      ROLE: business
+      DATABASE_URL: postgresql://op_business:${DB_BUSINESS_PASSWORD}@db/operations
+  timesfm:
+    <<: *common
+    image: paper-operations-ml:eval-v1
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.worker-ml
+    mem_limit: 6g
+    cpus: 2
+    volumes: ['${MODEL_DIR}:/model:ro']
+    environment:
+      <<: *env
+      ROLE: ml
+      DATABASE_URL: postgresql://op_ml:${DB_ML_PASSWORD}@db/operations
+      HF_HUB_OFFLINE: '1'
+      OMP_NUM_THREADS: '2'
+  relay:
+    <<: *common
+    environment:
+      <<: *env
+      ROLE: relay
+      DATABASE_URL: postgresql://op_relay:${DB_RELAY_PASSWORD}@db/operations
+  logger:
+    <<: *common
+    environment:
+      <<: *env
+      ROLE: logger
+      DATABASE_URL: postgresql://op_logger:${DB_LOGGER_PASSWORD}@db/operations
+  supplier:
+    <<: *common
+    command: [uvicorn, src.operations.supplier:app, --host, 0.0.0.0, --port, '8001', --no-access-log]
+    environment:
+      <<: *env
+      DATABASE_URL: postgresql://op_supplier:${DB_SUPPLIER_PASSWORD}@db/operations
+      SUPPLIER_LOSE_FIRST_RESPONSE: ${SUPPLIER_LOSE_FIRST_RESPONSE:-0}
+volumes:
+  postgres:
+  rabbit:
+networks:
+  private:
