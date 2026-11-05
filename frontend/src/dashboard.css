@@ -39,3 +39,6 @@ body{background:radial-gradient(circle at 20% 20%,#f7fafc 0%,transparent 45%),ra
 .history-table-dialog .table-wrap{flex:1;min-height:0;overflow:auto;margin:16px 0 0;border-radius:12px}
 .history-table-dialog th{position:sticky;top:0;z-index:1;background:#f3f7fc}
 @media(max-width:650px){.history-table-dialog[open]{height:calc(100dvh - 32px);max-height:calc(100dvh - 32px);padding:16px}}
+
+/* All dialogs share native backdrop, focus containment and dismissal. */
+dialog.dash-modal{width:min(500px,calc(100% - 32px));max-height:calc(100dvh - 40px)}dialog.dash-modal.wide{width:min(1180px,calc(100% - 32px))}

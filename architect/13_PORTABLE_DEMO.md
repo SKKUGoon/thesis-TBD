@@ -43,3 +43,16 @@
 회색 요약·청색 합계·그래프 내부 hover를 반영한 최신 이전 파일은 `runs/cheonan/chart_hover_ui_20261103_01/bundle.tar.gz`다.
 
 테이블 뷰·발주 목록의 공통 스크롤바 디자인까지 포함한 최신 이전 파일은 `runs/cheonan/table_scrollbars_ui_20261103_01/bundle.tar.gz`다.
+
+## 2026-11-05 데모 모델 전환
+
+- API 런타임 환경변수 `DEMO_MODE`를 도입했다. Compose 기본 true, 직접 실행 기본 false이며 정확히 true인 경우만 켠다(대소문자 무관). false이면 전환·Demo Setting UI와 Naive/설정 API를 차단한다.
+- 상단 버튼 TimesFM ↔ Naive, 툴팁 모델 변경. 약품만 전환하고 물품은 저장된 TimesFM 결과를 유지한다. 선택은 화면 메모리에서 유지한다.
+- Naive는 기존 `seasonal_comparison.py`의 원점 직전 7일 요일 반복과 동일하다. 2주 모두 원점 이전 자료만 사용하고 미관측은 보존한다. 예측값·이전 예측·MAE·WAPE·합계·테이블·우측 수량이 함께 전환된다. 두 모델 검증 지표는 공통 관측 날짜에서 계산한다. 주문량/효용성 비교를 추가한 것은 아니다.
+- 새 사설 묶음 경로: `runs/cheonan/demo_model_switch_20261105_01/bundle.tar.gz`.
+- 검증: 합성 API 11개·프론트 단위 2개·타입/빌드·Python 컴파일 통과. 브라우저에서 TimesFM→Naive→TimesFM 합계 변경/복원, 테이블 열기, 390px 화면 넘침 없음, OFF 기능 응답에 따른 버튼/설정 숨김을 확인했다. OFF API는 합성 테스트로 설정 GET/POST와 Naive 차단을 확인했다.
+- 기존 저장 Naive 비교 14,280행과 새 시드 기반 계산을 전수 대조해 일치했다. 새 archive의 manifest 17개 파일 해시가 일치하며 토큰/SQLite는 포함하지 않는다. 로컬 실행은 기존 private/config 마운트와 `mtech-demo_state`를 유지했다.
+
+## 2026-11-05 공통 모달 반영 묶음
+
+최신 사설 묶음은 `runs/cheonan/unified_modals_20261105_01/bundle.tar.gz`다. TimesFM/Naive 전환을 포함한다. 프론트 타입·빌드 통과, 브라우저에서 설정·프로필·처리 내역·테이블·초기화 모달 각각 내부 클릭 유지/배경 클릭 닫기/Esc 닫기/6px 배경 흐림을 확인했다. 완료 응답은 브라우저 내 응답 대체로 확인했으며 실제 주간은 진행시키지 않았다. 모바일 테이블 배경 클릭도 확인했다. 묶음 17개 파일 해시를 검증하고 기존 API private/config/SQLite 마운트를 유지했다.

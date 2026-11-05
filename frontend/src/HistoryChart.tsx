@@ -1,11 +1,12 @@
 import {useEffect,useRef,useState} from 'react';
 import {useQuery} from '@tanstack/react-query';
+import {DialogShell} from './Modal';
 import {request,describeError} from './api';
 import {addDays,day,total} from './domain';
 import type {Schema} from './types';
 type History=Schema['ForecastHistory'];
-export default function HistoryChart({token,scope,owner,itemId,forecastId,kind,compact=false}:{token:string;scope:string;owner:string;itemId:string;forecastId:string;kind:'drug'|'material';compact?:boolean}){
- const query=useQuery({queryKey:[owner,scope,'forecast-history',itemId,forecastId],queryFn:({signal})=>request<History>(token,scope,`/items/${itemId}/forecast-history?forecast_id=${forecastId}`,{signal})});
+export default function HistoryChart({token,scope,owner,itemId,forecastId,kind,compact=false,model='timesfm'}:{token:string;scope:string;owner:string;itemId:string;forecastId:string;kind:'drug'|'material';compact?:boolean;model?:'timesfm'|'naive'}){
+ const query=useQuery({queryKey:[owner,scope,'forecast-history',itemId,forecastId,model],queryFn:({signal})=>request<History>(token,scope,`/items/${itemId}/forecast-history?forecast_id=${forecastId}${model==='naive'?'&model=naive':''}`,{signal})});
  if(query.isPending)return <p role="status">실제 사용량과 이전 예측을 불러오고 있습니다.</p>;
  if(query.error)return <div role="alert" className="notice error">{describeError(query.error)} <button onClick={()=>void query.refetch()}>다시 조회</button></div>;
  return <Chart data={query.data} kind={kind} compact={compact}/>;
@@ -71,7 +72,5 @@ function Chart({data,kind,compact=false}:{data:History;kind:'drug'|'material';co
  </div>;
 }
 function TableView({onClose,dates,actual,previous,current,actualLabel,digits}:{onClose:()=>void;dates:string[];actual:{day:string;quantity:string|null}[];previous:{day:string;quantity:string|null}[];current:{day:string;quantity:string|null}[];actualLabel:string;digits:(v:string|null)=>string}){
- const dialog=useRef<HTMLDialogElement>(null);
- useEffect(()=>{const element=dialog.current!;element.showModal();return()=>element.close()},[]);
- return <dialog ref={dialog} className="history-table-dialog" aria-label="테이블 뷰" onCancel={event=>{event.preventDefault();onClose()}}><div className="row spread"><h3>테이블 뷰</h3><button aria-label="닫기" className="quiet" onClick={onClose}>닫기</button></div><div className="table-wrap"><table><thead><tr><th>날짜</th><th className="n">{actualLabel}</th><th className="n">이전 예측</th><th className="n">이번 예측</th></tr></thead><tbody>{dates.map(d=><tr key={d}><td>{d}</td><td className="n">{digits(actual.find(v=>v.day===d)?.quantity??null)}</td><td className="n">{digits(previous.find(v=>v.day===d)?.quantity??null)}</td><td className="n">{digits(current.find(v=>v.day===d)?.quantity??null)}</td></tr>)}</tbody></table></div></dialog>;
+ return <DialogShell className="history-table-dialog" title="테이블 뷰" onClose={onClose}><div className="row spread"><h3>테이블 뷰</h3><button aria-label="닫기" className="quiet" onClick={onClose}>닫기</button></div><div className="table-wrap"><table><thead><tr><th>날짜</th><th className="n">{actualLabel}</th><th className="n">이전 예측</th><th className="n">이번 예측</th></tr></thead><tbody>{dates.map(d=><tr key={d}><td>{d}</td><td className="n">{digits(actual.find(v=>v.day===d)?.quantity??null)}</td><td className="n">{digits(previous.find(v=>v.day===d)?.quantity??null)}</td><td className="n">{digits(current.find(v=>v.day===d)?.quantity??null)}</td></tr>)}</tbody></table></div></DialogShell>;
 }

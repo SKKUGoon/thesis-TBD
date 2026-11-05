@@ -118,3 +118,42 @@ def test_seed_tamper_rejected_on_restart(files):
     files[0].write_text(json.dumps(seed))
     with pytest.raises(ValueError, match='SEED_CHANGED'):
         client_for(files)
+
+
+def test_naive_weekday_repeat_missing_and_cutoff(files):
+    client = client_for(files); choose(client)
+    forecast = client.get('/api/v1/forecasts').json()['items'][-1]
+    item = client.get('/api/v1/items').json()['items'][0]
+    endpoint = f"/api/v1/items/{item['id']}/forecast-history"
+    params = {'forecast_id': forecast['id'], 'model': 'naive'}
+    history = client.get(endpoint, params=params).json()
+    seed = json.loads(files[0].read_text())
+    for curve in [history['current'], history['previous']]:
+        expected = [seed['days'][str(date.fromisoformat(curve['origin']) + timedelta(days=-7+n))]['usage'][0] for n in range(7)]
+        assert [v['quantity'] for v in curve['values']] == [None if v is None else str(v) for v in expected * 2]
+    assert history['metrics']['mae'] == '0.000000'
+    before = history['current']
+    for day, record in seed['days'].items():
+        if day >= forecast['forecast_origin']:
+            record['usage'] = [9999] * 30
+    files[0].write_text(json.dumps(seed))
+    other = TestClient(create_app(files[0], files[1], files[2].with_name('other.db'), TOKEN), headers={'Authorization': 'Bearer '+TOKEN})
+    choose(other)
+    other_forecast = other.get('/api/v1/forecasts').json()['items'][-1]
+    after = other.get(endpoint, params={**params, 'forecast_id': other_forecast['id']}).json()['current']
+    assert before['values'] == after['values']
+    rows = client.get(f"/api/v1/forecasts/{forecast['id']}/values?model=naive").json()['items']
+    assert any(v['prediction'] is None for v in rows)
+
+
+def test_demo_off_blocks_settings_and_naive(files):
+    client = TestClient(create_app(*files, TOKEN, demo_mode=False), headers={'Authorization': 'Bearer '+TOKEN})
+    choose(client)
+    assert client.get('/api/v1/demo/capabilities').json() == {'demo_mode': False}
+    assert client.get('/api/v1/demo/settings').status_code == 404
+    assert post(client, 'demo/settings', {'start_date': '2024-03-04', 'forecast_loading_seconds': 0}).status_code == 404
+    forecast = client.get('/api/v1/forecasts').json()['items'][-1]
+    path = f"/api/v1/forecasts/{forecast['id']}/values"
+    assert client.get(path).status_code == 200
+    assert client.get(path+'?model=naive').status_code == 404
+    assert client.get(path+'?model=invalid').status_code == 422

@@ -122,26 +122,43 @@ class DemoStore:
         forecast = self.forecast(state, origin)
         return {'id': uid(forecast['id'] + 'delivery'), 'kind': 'weekly', 'week_start': shifted(origin, -7), 'week_end_exclusive': origin, 'source_revision': 1, 'source_closed_at': stamp(origin), 'source_available_at': stamp(origin), 'received_at': stamp(origin), 'status': 'validated', 'supersedes_delivery_id': None, 'job_id': forecast['job_id'], 'snapshot_id': forecast['snapshot_id'], 'artifact_hash': self.seed['sha256'], 'issue_count': 0, 'correction_impacts': []}
 
-    def history(self, state: dict, item_id: str, origin: str) -> dict:
+    def prediction_values(self, origin: str, model: str = 'timesfm') -> list[dict]:
+        """Read saved predictions or repeat pre-origin weekdays; preserve missing input."""
+        values = []
+        indices = {item['code']: i for i, item in enumerate(self.items)}
+        for record in self.seed['forecasts'][origin]:
+            value = dict(record)
+            if model == 'naive' and self.items[indices[value['channel']]]['kind'] == 'drug':
+                offset = (date.fromisoformat(value['target_day']) - date.fromisoformat(origin)).days
+                source = shifted(origin, -7 + offset % 7)
+                quantity = self.seed['days'][source]['usage'][indices[value['channel']]]
+                value['prediction'] = None if quantity is None else str(quantity)
+                value['prediction_raw'] = value['prediction']
+            values.append(value)
+        return values
+
+    def history(self, state: dict, item_id: str, origin: str, model: str = 'timesfm') -> dict:
         index = next((i for i, item in enumerate(self.items) if item['id'] == item_id), None)
         if index is None:
             raise KeyError('ITEM_NOT_FOUND')
         item = self.items[index]
         prior = max((o for o in state['origins'] if o < origin), default=None)
         def curve(o: str | None) -> dict | None:
-            return None if o is None else {'id': self.forecast(state, o)['id'], 'origin': o, 'values': [{'day': v['target_day'], 'quantity': v['prediction']} for v in self.seed['forecasts'][o] if v['channel'] == item['code']]}
+            return None if o is None else {'id': self.forecast(state, o)['id'], 'origin': o, 'values': [{'day': v['target_day'], 'quantity': v['prediction']} for v in self.prediction_values(o, model) if v['channel'] == item['code']]}
         previous = curve(prior)
         actual = [{'day': shifted(origin, n), 'quantity': None if (v := self.seed['days'][shifted(origin, n)]['usage'][index]) is None else str(v), 'observation': 'missing' if v is None else 'observed'} for n in range(-28, 0)]
         truth = {v['day']: Decimal(v['quantity']) for v in actual if v['quantity'] is not None}
         eligible = [v for v in previous['values'] if v['day'] < origin] if previous else []
-        matched = [(Decimal(v['quantity']), truth[v['day']]) for v in eligible if v['day'] in truth]
+        # Keep both model metrics on the same observed weekday-repeat support.
+        common_days = {v['target_day'] for v in self.prediction_values(prior, 'naive') if v['channel'] == item['code'] and v['prediction'] is not None} if prior else set()
+        matched = [(Decimal(v['quantity']), truth[v['day']]) for v in eligible if v['day'] in truth and v['day'] in common_days and v['quantity'] is not None]
         absolute = sum((abs(p - a) for p, a in matched), Decimal(0))
         denominator = sum((abs(a) for _, a in matched), Decimal(0))
         rounded = lambda v: str(v.quantize(Decimal('0.000001'))) if v is not None else None
         return {'item_id': item_id, 'item_name': item['name'], 'unit': item['base_unit'], 'as_of': stamp(origin), 'current': curve(origin), 'previous': previous, 'actual': actual, 'metrics': {'observations': len(matched), 'expected_observations': len(eligible), 'mae': rounded(absolute / len(matched)) if matched else None, 'wape_pct': rounded(absolute / denominator * 100) if denominator else None, 'start': min((v['day'] for v in eligible), default=None), 'end': max((v['day'] for v in eligible), default=None)}}
 
 
-def create_app(seed_path: Path, config_path: Path, database_path: Path, token: str) -> FastAPI:
+def create_app(seed_path: Path, config_path: Path, database_path: Path, token: str, demo_mode: bool = True) -> FastAPI:
     """Create a replay-only app; refuse startup without a private access token."""
     if len(token) < 32:
         raise ValueError('PRIVATE_TOKEN_REQUIRED')
@@ -158,6 +175,11 @@ def create_app(seed_path: Path, config_path: Path, database_path: Path, token: s
         if not hmac.compare_digest(request.headers.get('Authorization', ''), 'Bearer ' + token):
             return JSONResponse({'error': {'code': 'UNAUTHORIZED'}}, status_code=401)
         try:
+            model = request.query_params.get('model', 'timesfm')
+            if model not in ('timesfm', 'naive'):
+                raise ValueError('INVALID_MODEL')
+            if (model != 'timesfm' or path == 'demo/settings') and not demo_mode:
+                raise KeyError('DEMO_DISABLED')
             raw = await request.body() if request.method == 'POST' else b''
             if len(raw) > 16384:
                 raise ValueError('PAYLOAD_TOO_LARGE')
@@ -171,7 +193,9 @@ def create_app(seed_path: Path, config_path: Path, database_path: Path, token: s
                         raise ValueError('INVALID_PAGE')
                     return {'items': values[cursor:cursor+limit], 'next_cursor': str(cursor + limit) if cursor + limit < len(values) else None}
                 if request.method == 'GET':
-                    if path == 'me':
+                    if path == 'demo/capabilities':
+                        result = {'demo_mode': demo_mode}
+                    elif path == 'me':
                         result = {'id': uid('demo-admin'), 'platform_role': 'test_admin', 'workspace_id': scope or None, 'roles': ['admin', 'viewer', 'test_operator', 'operator'] if state else []}
                     elif path == 'demo/settings':
                         result = {**store.settings(conn), 'available_start_dates': store.origins, 'seed_sha256': store.seed['sha256'], 'mode': 'prerecorded_replay'}
@@ -199,14 +223,14 @@ def create_app(seed_path: Path, config_path: Path, database_path: Path, token: s
                         if len(parts) != 3:
                             raise KeyError('NOT_FOUND')
                         if parts[2] == 'values':
-                            result = paged([{'item_id': uid(v['channel']), 'target_day': v['target_day'], 'horizon_day': (date.fromisoformat(v['target_day']) - date.fromisoformat(origin)).days + 1, 'prediction': v['prediction'], 'prediction_raw': v['prediction_raw']} for v in store.seed['forecasts'][origin]])
+                            result = paged([{'item_id': uid(v['channel']), 'target_day': v['target_day'], 'horizon_day': (date.fromisoformat(v['target_day']) - date.fromisoformat(origin)).days + 1, 'prediction': v['prediction'], 'prediction_raw': v['prediction_raw']} for v in store.prediction_values(origin, model)])
                         elif parts[2] == 'patient-history':
                             result = {'as_of': stamp(origin), 'forecast_origin': origin, 'values': [{'day': shifted(origin, n), **store.seed['days'][shifted(origin, n)]['patients']} for n in range(-28, 0)]}
                         else:
                             raise KeyError('NOT_FOUND')
                     elif path.startswith('items/') and path.endswith('/forecast-history'):
                         origin = store.find_origin(state, request.query_params.get('forecast_id', ''))
-                        result = store.history(state, path.split('/')[1], origin)
+                        result = store.history(state, path.split('/')[1], origin, model)
                     else:
                         raise KeyError('NOT_FOUND')
                     return JSONResponse(result)
@@ -281,4 +305,4 @@ def make_job(identifier: str, stage: str, status: str) -> dict:
 
 def from_environment() -> FastAPI:
     """Load private mounts when Uvicorn starts the demo service."""
-    return create_app(Path(os.getenv('DEMO_SEED', '/private/seed.json')), Path(os.getenv('DEMO_CONFIG', '/config/config.json')), Path(os.getenv('DEMO_DATABASE', '/state/demo.sqlite3')), Path(os.getenv('DEMO_TOKEN_FILE', '/private/access-token')).read_text().strip())
+    return create_app(Path(os.getenv('DEMO_SEED', '/private/seed.json')), Path(os.getenv('DEMO_CONFIG', '/config/config.json')), Path(os.getenv('DEMO_DATABASE', '/state/demo.sqlite3')), Path(os.getenv('DEMO_TOKEN_FILE', '/private/access-token')).read_text().strip(), demo_mode=os.getenv('DEMO_MODE', 'false').lower() == 'true')

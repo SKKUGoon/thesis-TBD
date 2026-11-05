@@ -378,3 +378,5 @@ macOS의 Docker Desktop에서 Linux ARM64 컨테이너 빌드·기동, 실제 �
 원자료·무손실 Parquet·기존 진단은 data/에 보존하며 이전 계획은 research/history/에 있습니다. LAVAR 코드는 로컬 Git 복구 참조에 퇴역했습니다. 실행 코드는 src/methods/<방법론>/, 방법론 설명은 research/methods/에 보존합니다. 민감한 자료·실행 산출물은 공개 Git 저장소에 추가하지 않습니다.
 
 현재 운영 UI는 [최신 대시보드 구현](architect/12_DASHBOARD_IMPLEMENTATION.md)을 따릅니다. 두 번째 대시보드를 유일한 UI로 확정했으며 이전 UI와 목업 진입점은 삭제했습니다.
+
+데모의 **TimesFM ↔ Naive** 전환은 [데모 기능 설정](deploy/demo/README.md#데모-전용-기능과-모델-전환)을 따릅니다. 묶음 폴더 `.env`의 `DEMO_MODE=false`로 전환 버튼과 Demo Setting을 끌 수 있습니다. 변경 후 `docker compose up -d`를 실행하고 브라우저를 새로고침하십시오.

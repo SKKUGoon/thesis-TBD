@@ -1,10 +1,13 @@
 import {useRef,useState} from 'react';
 import {useQuery,useQueryClient} from '@tanstack/react-query';
+import {useDemoMode} from './demo';
 import {ApiError,describeError,request} from './api';
 
 type Settings={start_date:string;forecast_loading_seconds:number;available_start_dates:string[]};
 export default function DemoSettings({token,owner,disabled,onChoose}:{token:string;owner:string;disabled:boolean;onChoose:(id:string)=>void}){
- const query=useQuery({queryKey:[owner,'demo-settings'],queryFn:({signal})=>request<Settings>(token,'','/demo/settings',{signal}),retry:false});
+ const enabled=useDemoMode(token,owner);
+ const query=useQuery({queryKey:[owner,'demo-settings'],queryFn:({signal})=>request<Settings>(token,'','/demo/settings',{signal}),retry:false,enabled});
+ if(!enabled)return null;
  if(query.error instanceof ApiError&&query.error.status===404)return null;
  if(query.isPending)return <p role="status">설정을 확인하고 있습니다.</p>;
  if(query.error)return <p role="alert">{describeError(query.error)}</p>;
